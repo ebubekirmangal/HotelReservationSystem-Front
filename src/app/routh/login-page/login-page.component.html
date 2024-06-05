@@ -1,0 +1,50 @@
+<app-basic-layout>
+    <div class="body">
+        <div class="container" id="container" [ngClass]="{'active': isActive}">
+            <div class="form-container sign-up">
+                <form action="" (submit)="createUser()" [formGroup]="registerForm">
+                    <h1>Create Account</h1>
+                    <div class="social-icons">
+                        <a href="" class="icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <span>ore use your email for registeration</span>
+                    <input type="text" placeholder="Fisrt Name" formControlName="firstName">
+                    <input type="text" placeholder="Last Name" formControlName="lastName">
+                    <input type="email" placeholder="Email" formControlName="email">
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <input type="password" placeholder="Password Confirm" formControlName="passwordConfirm">
+                    <input type="submit" value="Sign Up">
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form action="" (submit)="checkUser()" [formGroup]="loginForm">
+                    <h1>Sign In</h1>
+                    <div class="social-icons">
+                        <a href="" class="icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <span>ore use your email password</span>
+                    <input type="email" placeholder="Email" formControlName="email">
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <a href="#">Forget Your Password</a>
+                    <input type="submit" value="Sign In">
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of site features</p>
+                        <button class="hidden" id="login" (click)="loginBtn()">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Register with your personal details to use all of site features</p>
+                        <button class="hidden" id="register" (click)="registerBtn()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-basic-layout>
