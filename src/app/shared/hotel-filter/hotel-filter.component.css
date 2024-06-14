@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px;
+    height: auto;
+  }
+    .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: space-between;
+      flex-direction: column;
+      margin-top: 50px;
+      margin-left: 20px;
+  
+    }
+    .location button{
+      width: 247px;
+      border-radius: 3px;
+      border: 0;
+      padding: 18px 0;
+      outline: none;
+      text-indent: 17px;
+      text-align: left;
+      font-size: 15px;
+      color: gray;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .location button:hover{
+    border-bottom: 1px solid #000;
+    }
+    .button button{
+    padding: 12px 40px ;
+    border-radius: 25px;
+    font-weight: 546;
+      border: 0px;
+      background-color: #f07417;
+      color: #fff;
+    font-size: 15px;
+    }
+    .consept{
+    width: 30vw;
+    }
+    .loc-icon{
+      color: gray;
+      position: relative;
+      right: 31px;
+      font-size: 20px;
+    }
+    
+    

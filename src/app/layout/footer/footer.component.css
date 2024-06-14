@@ -6,8 +6,8 @@ footer{
     width: 100vw;
     background-color: #f07417;
     padding: 15px;
-    position: relative;
-    margin-bottom: 5px;
+    position: fixed;
+    bottom: 10px;
 }
 ul{
     display: flex;

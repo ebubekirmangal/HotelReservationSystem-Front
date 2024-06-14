@@ -1,0 +1,15 @@
+.container{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw; */
+}
+.information{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background-color: white;
+    height: 600px;
+    width: 400px;
+}
