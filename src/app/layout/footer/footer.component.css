@@ -1,0 +1,26 @@
+footer{
+    display: flex;
+    justify-content: space-around ;
+    align-items:center ;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #f07417;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 5px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    list-style: none;
+    gap: 10px;
+}
+a{
+    color: #fff;
+}
+.title{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}

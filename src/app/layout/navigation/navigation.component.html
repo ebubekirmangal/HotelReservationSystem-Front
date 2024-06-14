@@ -1,1 +1,12 @@
-<p>navigation works!</p>,
+<nav>
+    <a routerLink="/home">
+        <div class="logo">
+        <img src="/assets/logo/logo.png" alt="logo">
+    </div>
+</a>
+    <ul>
+        <a routerLink=""><li><i class="fa-solid fa-heart icon"></i>Favoriler</li></a>
+        <a routerLink=""><li><i class="fa-solid fa-earth-americas icon"></i>{{Language}}-{{Currency}}</li></a>
+        <a routerLink="/login"><li id="login"><i class="fa-solid fa-user icon"></i>Giriş Yap</li></a>
+    </ul>
+</nav>
