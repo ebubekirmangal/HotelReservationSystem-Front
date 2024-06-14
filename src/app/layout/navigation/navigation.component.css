@@ -1,0 +1,37 @@
+img{
+    width: 200px;
+    
+}
+.icon{
+    color: #ff942c;
+    margin-right: 5px;
+    font-size: 20px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    margin-top: 15px;
+    background-color: #fff;
+    
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+ul a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    font-weight: 500;
+}
+#login{
+    border: 2px solid #ff942c;
+    border-radius: 20px;
+    padding: 8px;
+}
