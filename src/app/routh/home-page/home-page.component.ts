@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.component";
 import { HotelFilterComponent } from "../../shared/hotel-filter/hotel-filter.component";
 import { LocationComponent } from "../../shared/location/location.component";
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -12,8 +12,25 @@ import { CommonModule } from '@angular/common';
     styleUrl: './home-page.component.css',
     imports: [BasicLayoutComponent, HotelFilterComponent, LocationComponent,CommonModule]
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit,OnDestroy {
     active:boolean;
+
+    constructor(
+        private renderer: Renderer2,
+        @Inject(PLATFORM_ID) private platformId: Object
+      ) {}
+    
+      ngOnInit(): void {
+        if (isPlatformBrowser(this.platformId)) {
+          this.renderer.addClass(document.body, 'homepage-background');
+        }
+      }
+    
+      ngOnDestroy(): void {
+        if (isPlatformBrowser(this.platformId)) {
+          this.renderer.removeClass(document.body, 'homepage-background');
+        }
+      }
 onFilterChange(active: boolean) {
         this.active = active;
     }

@@ -6,10 +6,8 @@
     width: 100vw; */
 }
 .information{
-    position: absolute;
-    top: 20%;
-    left: 20%;
+    position: rel;
     background-color: white;
-    height: 600px;
+    height: 500px;
     width: 400px;
 }

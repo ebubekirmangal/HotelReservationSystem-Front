@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginPageComponent } from './routh/login-page/login-page.component';
 import { HomePageComponent } from './routh/home-page/home-page.component';
 import { LocationComponent } from './shared/location/location.component';
+import { HotelFilterComponent } from './shared/hotel-filter/hotel-filter.component';
 
 
 

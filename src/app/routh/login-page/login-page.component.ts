@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -19,12 +19,23 @@ import { last } from 'rxjs';
         
     ]
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit,OnDestroy {
   isActive: boolean = false;
   loginForm:FormGroup;
   registerForm:FormGroup;
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder,private renderer: Renderer2,@Inject(PLATFORM_ID) private platformId: Object){
 
+  }
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.addClass(document.body, 'login-background');
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.removeClass(document.body, 'login-background');
+    }
   }
   createLoginForm() {
     this.loginForm = this.fb.group({

@@ -4,7 +4,7 @@
 }
 body{
     /*background-color: #dedede;*/
-    background-image:url("/assets/background/2.jpg"); /*3.jpg anasayfa, 2.jpg giriş sayfası*/
+     /*3.jpg anasayfa, 2.jpg giriş sayfası*/
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -15,3 +15,16 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Login sayfası için arkaplan */
+.login-background {
+    background-image: url("/assets/background/3.jpg");
+  }
+  
+  /* Ana sayfa için arkaplan */
+  .homepage-background {
+    background-image: url("/assets/background/2.jpg");
+  }
+
+  .hotelfilter-background {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
