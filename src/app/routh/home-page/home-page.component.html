@@ -1,6 +1,4 @@
 <app-basic-layout>
-    
-    <button>Otel Ara</button>
+    <app-hotel-filter (changeClick)="onFilterChange($event)"></app-hotel-filter>
+    <app-location *ngIf="active"></app-location>
 </app-basic-layout>
-
-

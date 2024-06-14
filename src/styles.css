@@ -4,11 +4,14 @@
 }
 body{
     /*background-color: #dedede;*/
-    background-image:url("/assets/background/Maldives.jpg"); 
+    background-image:url("/assets/background/2.jpg"); /*3.jpg anasayfa, 2.jpg giriş sayfası*/
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     overflow-x:hidden;
+    overflow-y: hidden;
     height: max-content;
-    
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
