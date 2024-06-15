@@ -1,8 +1,9 @@
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.component";
-import { HotelFilterComponent } from "../../shared/hotel-filter/hotel-filter.component";
+
 import { LocationComponent } from "../../shared/location/location.component";
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { HotelFilterComponent } from "../../shared/hotel-filter/hotel-filter.component";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
-    imports: [BasicLayoutComponent, HotelFilterComponent, LocationComponent,CommonModule]
+    imports: [BasicLayoutComponent, LocationComponent, CommonModule, HotelFilterComponent]
 })
 export class HomePageComponent implements OnInit,OnDestroy {
     active:boolean;

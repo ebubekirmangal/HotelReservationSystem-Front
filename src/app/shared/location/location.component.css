@@ -4,10 +4,60 @@
     justify-content: center;
     height: 50vh;
     width: 100vw; */
+    filter: brightness(100%);
+    margin-top: 1px;
 }
 .information{
     position: rel;
     background-color: white;
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 260px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35) ;
+}
+input{
+    border: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 25px;
+    outline: 0;
+}
+h3{
+    margin-top: 5px;
+    font-weight: 500;
+}
+.location{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 2px solid black;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.locations{
+    overflow-y: auto;
+    height: 295px;
+}
+.location:hover{
+    background-color: rgb(225, 241, 254);
+}
+.location-info{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.local{
+    font-weight: 600;
+}
+.icon-close{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.icon-location{
+font-size: 18px;
+margin-left: 10px;
+
 }

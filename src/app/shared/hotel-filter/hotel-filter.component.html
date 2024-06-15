@@ -1,29 +1,34 @@
 <div class="container">
-    <div class="search-box">
-      <div class="location">
-          <a routerLink="/location"><button (click)="isActive()">Nereye?</button></a>
-          <i class="fa-solid fa-location-dot loc-icon"></i>
+  <div class="search-box">
+    <div class="location" #locationButton>
+      <a routerLink="/location"><button (click)="isActive()" value="{{locationInputValue}}">Nereye?</button>
+        <i class="fa-solid fa-location-dot loc-icon"></i>
+      </a>
+    </div>
+    <div class="panel"  [ngStyle]="{'top.px': panelTop, 'left.px': panelLeft}">
+      <app-location *ngIf="active" (giveLocationInfos)="giveInfos($event)"></app-location>
+    </div>
+    <div class="calendar">
+      <div class="input">
+        <mat-form-field>
+          <input matInput [matDatepicker]="checkInPicker" placeholder="Giriş Tarihi" [(ngModel)]="checkInDate">
+          <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkInPicker></mat-datepicker>
+        </mat-form-field>
       </div>
-      <div class="calendar">
-        <div class="input">
-          <mat-form-field>
-            <input matInput [matDatepicker]="checkInPicker" placeholder="Giriş Tarihi" [(ngModel)]="checkInDate">
-            <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
-            <mat-datepicker #checkInPicker></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div class="output">
-          <mat-form-field>
-            <input matInput [matDatepicker]="checkOutPicker" placeholder="Çıkış Tarihi" [(ngModel)]="checkOutDate">
-            <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
-            <mat-datepicker #checkOutPicker></mat-datepicker>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="button">
-        <button mat-raised-button color="primary" (click)="search()">Otel Ara</button>
+      <div class="output">
+        <mat-form-field>
+          <input matInput [matDatepicker]="checkOutPicker" placeholder="Çıkış Tarihi" [(ngModel)]="checkOutDate">
+          <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkOutPicker></mat-datepicker>
+        </mat-form-field>
       </div>
     </div>
-    <div class="consept">
+    <div class="search">
+      <button mat-raised-button color="primary" (click)="search()">Otel Ara</button>
     </div>
   </div>
+  <div class="consept">
+  </div>
+
+</div>

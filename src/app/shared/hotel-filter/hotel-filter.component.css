@@ -1,54 +1,74 @@
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: space-between;
-    flex-direction: column;
-    width: 100vw;
-    padding: 20px;
-    height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
   }
-    .search-box {
-      display: flex;
-      justify-content: center;
-      align-items: space-between;
-      flex-direction: column;
-      margin-top: 50px;
-      margin-left: 20px;
-  
-    }
-    .location button{
-      width: 247px;
-      border-radius: 3px;
-      border: 0;
-      padding: 18px 0;
-      outline: none;
-      text-indent: 17px;
-      text-align: left;
-      font-size: 15px;
-      color: gray;
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-    .location button:hover{
-    border-bottom: 1px solid #000;
-    }
-    .button button{
-    padding: 12px 40px ;
-    border-radius: 25px;
-    font-weight: 546;
-      border: 0px;
-      background-color: #f07417;
-      color: #fff;
-    font-size: 15px;
-    }
-    .consept{
-    width: 30vw;
-    }
-    .loc-icon{
-      color: gray;
-      position: relative;
-      right: 31px;
-      font-size: 20px;
-    }
-    
-    
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  height: 45px;
+  }
+.location{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.location button{
+  width: 247px;
+  border-radius: 5px 5px 0 0;
+  border: 0;
+  padding: 19px 0;
+  outline: none;
+  text-indent: 17px;
+  text-align: left;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid;
+  }
+.location button:hover{
+  border-bottom: 1px solid #000;
+  background-color: rgb(236, 233, 233);
+  }
+.search button{
+  padding: 12px 40px ;
+  border-radius: 25px;
+  font-weight: 546;
+  border: 0px;
+  background-color: #f07417;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  }
+.search button:hover{
+  transform: scale(0.98);
+  }
+.consept{
+  width: 30vw;
+  }
+.loc-icon{
+  color: gray;
+  position: relative;
+  right: 31px;
+  font-size: 20px;
+}
+.calendar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}    
+.panel{
+  position: absolute;
+  left: 0;
+  top: 40px;
+}

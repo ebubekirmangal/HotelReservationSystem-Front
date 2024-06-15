@@ -1,13 +1,17 @@
 footer{
     display: flex;
-    justify-content: space-around ;
+    justify-content: space-between ;
     align-items:center ;
     flex-direction: column;
     width: 100vw;
+    height: 80px;
     background-color: #f07417;
     padding: 15px;
     position: fixed;
     bottom: 10px;
+    border-top:2px solid #fff ;
+    border-bottom:2px solid #fff;
+    color: #fff;
 }
 ul{
     display: flex;
@@ -19,7 +23,7 @@ ul{
 a{
     color: #fff;
 }
-.title{
+.siteTitle{
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 2px;

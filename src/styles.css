@@ -22,9 +22,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   /* Ana sayfa için arkaplan */
   .homepage-background {
-    background-image: url("/assets/background/2.jpg");
+    background-image: url("/assets/background/3.jpg");
+    
   }
 
   .hotelfilter-background {
-    background-color: rgba(0, 0, 0, 0.7);
+  
   }

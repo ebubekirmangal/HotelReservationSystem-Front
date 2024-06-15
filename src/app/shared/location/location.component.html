@@ -1,22 +1,25 @@
 <div class="container">
     <div class="information">
-        <div class="icon">
-
+        <div class="icon-close">
+            <i class="fa-solid fa-xmark"></i>
         </div>
-        <input class="search" type="text" value="Varış noktası">
+        <input class="search" type="text" placeholder="Varış noktası"  [(ngModel)]="selectedLocationInfo" value="{{selectedLocationInfo}}">
         <hr>
         <h3>Popüler tatil noktaları</h3>
-        <!-- @for (item of items; track $index) {
-
-        } -->
-        <div class="location">
-            <div class="icon">
-
-            </div>
-            <div class="location-info">
-                <h5>Fethiye</h5>
-                <small></small>
-            </div>
+        
+        <div class="locations">
+            @for (item of locations; track $index) {
+                <div class="location" (click)="logLocationInfo(item)">
+                    <div class="icon-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+    
+                    <div class="location-info">
+                        <span class="local">{{item.town}}</span>
+                        <small>{{item.city}}, {{item.country}}</small>
+                    </div>
+                </div>
+            }
         </div>
 
     </div>

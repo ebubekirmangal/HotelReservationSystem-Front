@@ -11,10 +11,11 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 15px 40px;
     margin-top: 15px;
     background-color: #fff;
-    
+    border-top:2px solid #ff942c ;
+    border-bottom:2px solid #ff942c;
 }
 ul{
     display: flex;
