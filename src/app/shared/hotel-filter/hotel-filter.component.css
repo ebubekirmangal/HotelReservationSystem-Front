@@ -10,9 +10,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin: 30px auto 0 auto;
   height: 45px;
   gap: 20px;
+  background-color: #fff;
+  padding: 30px 20px 10px 20px;
+  border: 2px solid #f07417;
+  border-radius: 500px;
+  width: max-content;
   }
 .location{
   display: flex;
