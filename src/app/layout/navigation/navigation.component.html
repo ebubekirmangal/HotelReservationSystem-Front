@@ -5,8 +5,12 @@
     </div>
 </a>
     <ul>
-        <a routerLink=""><li><i class="fa-solid fa-heart icon"></i>Favoriler</li></a>
-        <a><li><i class="fa-solid fa-earth-americas icon"></i>{{Language}}-{{Currency}}</li></a>
-        <a routerLink="/login"><li id="login"><i class="fa-solid fa-user icon"></i>Giriş Yap</li></a>
+        <a routerLink=""><li><i class="fa-solid fa-heart icon"></i>{{"Favorites" | translate}}</li></a>
+        <li><i class="fa-solid fa-earth-americas icon"></i><select (change)="changeLanguage($event.target['value'])" [(ngModel)]="selectedLanguage">
+            <option value="en">English</option>
+            <option value="tr">Türkçe</option>
+            <!-- <option value="ru">Русский-RU</option> -->
+        </select></li>
+        <a routerLink="/login" class="log"><i class="fa-solid fa-user icon"></i><li id="login">{{"Login" | translate}}</li></a>
     </ul>
 </nav>

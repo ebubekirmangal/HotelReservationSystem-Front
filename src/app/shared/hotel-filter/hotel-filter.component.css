@@ -12,6 +12,7 @@
   align-items: center;
   margin-top: 50px;
   height: 45px;
+  gap: 20px;
   }
 .location{
   display: flex;
@@ -23,15 +24,15 @@
   width: 247px;
   border-radius: 5px 5px 0 0;
   border: 0;
-  padding: 19px 0;
+  padding: 18.2px 0;
   outline: none;
   text-indent: 17px;
   text-align: left;
   font-size: 15px;
   color: gray;
-  margin-bottom: 20px;
   cursor: pointer;
   border-bottom: 1px solid;
+  margin-bottom: 20px;
   }
 .location button:hover{
   border-bottom: 1px solid #000;
@@ -46,7 +47,6 @@
   color: #fff;
   font-size: 15px;
   cursor: pointer;
-  margin-left: 20px;
   margin-bottom: 20px;
   }
 .search button:hover{
@@ -58,8 +58,8 @@
 .loc-icon{
   color: gray;
   position: relative;
-  right: 31px;
-  font-size: 20px;
+  left: 130px;
+  font-size: 18px;
 }
 .calendar{
   display: flex;

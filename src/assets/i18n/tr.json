@@ -1,0 +1,36 @@
+{
+    "language": {
+      "tr": "Türkçe",
+      "en": "İngilizce",
+      "ru": "Rusça"
+    },
+    "WELCOME": "Hoşgeldiniz",
+    "Login": "Giriş",
+    "Favorites": "Favoriler",
+    "Social Media": "Sosyal Medya",
+    "Support and Help": "Destek ve Yardım",
+    "About": "Hakkında",
+    "It is Tobeto company. All rights reserved. Your credit card information is protected by a 256 bit SSL certificate.": "Tobeto şirketidir. Tüm hakları saklıdır. Kredi kartı bilgileriniz 256 bit SSL sertifikası ile korunmaktadır.",
+    "Entry Date": "Giriş Tarihi",
+    "Exit Date": "Çıkış Tarihi",
+    "Where": "Nereye",
+    "Hotel Search": "Otel Ara",
+    "Destination": "Varış Noktası",
+    "Popular holiday destinations": "Popüler tatil noktaları",
+    "Create Account": "Hesap Oluşturun",
+    "Sign In":"Giriş Yap",
+    "Sign Up":"Kayıt Ol",
+    "Forget Your Password":"Parolanızı mı unuttunuz",
+    "or use your email password":"veya e-posta şifrenizi kullanın",
+    "Register with your personal details to use all of site features.":"Tüm site özelliklerini kullanmak için kişisel bilgilerinizle kaydolun.",
+    "Hello, Friend!":"Merhaba, Arkadaşım!",
+    "Welcome Back!":"Tekrar hoşgeldiniz!",
+    "Enter your personal details to use all of site features.":"Tüm site özelliklerini kullanmak için kişisel bilgilerinizi girin.",
+    "ore use your email for registeration":"kayıt için e-posta adresinizi kullanın",
+    "Email":"E-Posta",
+    "Password":"Parola",
+    "Password Confirm":"Parola Onayla",
+    "First Name":"Adınız",
+    "Last Name":"Soyadınız"
+    
+  }

@@ -3,9 +3,9 @@
         <div class="icon-close">
             <i class="fa-solid fa-xmark"></i>
         </div>
-        <input class="search" type="text" placeholder="Varış noktası"  [(ngModel)]="selectedLocationInfo" value="{{selectedLocationInfo}}">
+        <input class="search" type="text" placeholder="{{'Destination' | translate}}"  [(ngModel)]="selectedLocationInfo" value="{{selectedLocationInfo}}">
         <hr>
-        <h3>Popüler tatil noktaları</h3>
+        <h3>{{"Popular holiday destinations" | translate}}</h3>
         
         <div class="locations">
             @for (item of locations; track $index) {

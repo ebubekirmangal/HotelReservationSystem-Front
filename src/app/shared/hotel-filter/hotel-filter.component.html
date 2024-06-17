@@ -1,9 +1,7 @@
 <div class="container">
   <div class="search-box">
     <div class="location" #locationButton>
-      <a routerLink="/location"><button (click)="isActive()" value="{{locationInputValue}}">Nereye?</button>
-        <i class="fa-solid fa-location-dot loc-icon"></i>
-      </a>
+      <button (click)="isActive()" value="{{locationInputValue}}">{{"Where" | translate}}? <i class="fa-solid fa-location-dot loc-icon"></i></button>
     </div>
     <div class="panel"  [ngStyle]="{'top.px': panelTop, 'left.px': panelLeft}">
       <app-location *ngIf="active" (giveLocationInfos)="giveInfos($event)"></app-location>
@@ -11,21 +9,21 @@
     <div class="calendar">
       <div class="input">
         <mat-form-field>
-          <input matInput [matDatepicker]="checkInPicker" placeholder="Giriş Tarihi" [(ngModel)]="checkInDate">
+          <input matInput [matDatepicker]="checkInPicker" placeholder="{{'Entry Date' | translate}}" [(ngModel)]="checkInDate">
           <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
           <mat-datepicker #checkInPicker></mat-datepicker>
         </mat-form-field>
       </div>
       <div class="output">
         <mat-form-field>
-          <input matInput [matDatepicker]="checkOutPicker" placeholder="Çıkış Tarihi" [(ngModel)]="checkOutDate">
+          <input matInput [matDatepicker]="checkOutPicker" placeholder="{{'Exit Date' | translate}}" [(ngModel)]="checkOutDate">
           <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
           <mat-datepicker #checkOutPicker></mat-datepicker>
         </mat-form-field>
       </div>
     </div>
     <div class="search">
-      <button mat-raised-button color="primary" (click)="search()">Otel Ara</button>
+      <button mat-raised-button color="primary" (click)="search()">{{"Hotel Search" | translate}}</button>
     </div>
   </div>
   <div class="consept">

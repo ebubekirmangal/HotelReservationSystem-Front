@@ -29,10 +29,35 @@ ul a{
     color: black;
 }
 li{
-    font-weight: 500;
+    font-weight: 550;
 }
 #login{
     border: 2px solid #ff942c;
     border-radius: 20px;
+    padding: 6.5px 20px;
+}
+select{
+    font-weight: 550; 
+    border: 2px solid #ff942c;
+    border-radius: 20px;
     padding: 8px;
+    cursor: pointer;
+    outline: 0;
+}
+option{
+    background-color: #ff942c; 
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+option:hover{
+    background-color: #ffffff; 
+    color: #ff942c;
+    cursor: pointer;
+    font-weight: 550;
+}
+.log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,4 +1,4 @@
-import {  AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
+import {  AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { LocationComponent } from "../location/location.component";
 import { Address } from '../../features/null/models/address';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-hotel-filter',
@@ -30,9 +31,11 @@ import { Address } from '../../features/null/models/address';
         CalendarModule, 
         FontAwesomeModule,
         RouterModule, 
-        LocationComponent]
+        LocationComponent,
+        TranslateModule
+      ]
 })
-export class HotelFilterComponent implements AfterViewInit {
+export class HotelFilterComponent implements AfterViewChecked {
 
   checkInDate: Date;
   checkOutDate: Date;
@@ -50,7 +53,7 @@ export class HotelFilterComponent implements AfterViewInit {
     private elementRef: ElementRef
   ) { }
 
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     // Panelin ilk konumlandırılması
     this.setPosition();
   }

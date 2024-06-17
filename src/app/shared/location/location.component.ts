@@ -2,11 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Address } from '../../features/null/models/address';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-location',
   standalone: true,
-  imports: [FontAwesomeModule,FormsModule],
+  imports: [FontAwesomeModule,FormsModule,TranslateModule],
   templateUrl: './location.component.html',
   styleUrl: './location.component.css'
 })

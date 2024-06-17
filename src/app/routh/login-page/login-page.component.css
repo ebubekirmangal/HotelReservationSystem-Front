@@ -202,3 +202,8 @@
 form h1{
     color: #f07417;
 }
+
+form #create-account{
+    margin-bottom: 0;
+  
+}

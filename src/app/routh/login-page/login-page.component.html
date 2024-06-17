@@ -2,46 +2,46 @@
     <div class="body">
         <div class="container" id="container" [ngClass]="{'active': isActive}">
             <div class="form-container sign-up">
-                <form action="" (submit)="createUser()" [formGroup]="registerForm">
-                    <h1>Create Account</h1>
+                <form action="http://localhost:8080/users/register" (submit)="createUser()" [formGroup]="registerForm">
+                    <h1 id="create-account">{{"Create Account" | translate}}</h1>
                     <div class="social-icons">
-                        <a href="" class="icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-google login-icon"></i></a>
+                        <a href=""><i class="fa-brands fa-facebook login-icon"></i></a>
                     </div>
-                    <span>ore use your email for registeration</span>
-                    <input type="text" placeholder="Fisrt Name" formControlName="firstName">
-                    <input type="text" placeholder="Last Name" formControlName="lastName">
-                    <input type="email" placeholder="Email" formControlName="email">
-                    <input type="password" placeholder="Password" formControlName="password">
-                    <input type="password" placeholder="Password Confirm" formControlName="passwordConfirm">
-                    <input type="submit" value="Sign Up">
+                    <span>{{"ore use your email for registeration" | translate}}</span>
+                    <input type="text" placeholder="{{'First Name' | translate}}" formControlName="firstName" name="firstName">
+                    <input type="text" placeholder="{{'Last Name' | translate}}" formControlName="lastName" name="lastName">
+                    <input type="email" placeholder="{{'Email' | translate}}" formControlName="email" name="email">
+                    <input type="password" placeholder="{{'Password' | translate}}" formControlName="password" name="password">
+                    <input type="password" placeholder="{{'Password Confirm' | translate}}" formControlName="passwordConfirm" name="passwordConfirm">
+                    <input type="submit" value="{{'Sign Up' | translate}}">
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form action="" (submit)="checkUser()" [formGroup]="loginForm">
-                    <h1>Sign In</h1>
+                <form action="http://localhost:8080/users/login" (submit)="checkUser()" [formGroup]="loginForm">
+                    <h1>{{"Sign In" | translate}}</h1>
                     <div class="social-icons">
-                        <a href="" class="icon"><i class="fa-brands fa-google"></i></a>
-                        <a href="" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="" ><i class="fa-brands fa-google login-icon"></i></a>
+                        <a href="" ><i class="fa-brands fa-facebook login-icon"></i></a>
                     </div>
-                    <span>ore use your email password</span>
-                    <input type="email" placeholder="Email" formControlName="email">
-                    <input type="password" placeholder="Password" formControlName="password">
-                    <a href="#">Forget Your Password</a>
-                    <input type="submit" value="Sign In">
+                    <span>{{"or use your email password" | translate}}</span>
+                    <input type="email" placeholder="{{'Email' | translate}}" formControlName="email" name="email">
+                    <input type="password" placeholder="{{'Password' | translate }}" formControlName="password" name="password">
+                    <a href="#">{{"Forget Your Password" | translate}} ?</a>
+                    <input type="submit" value="{{'Sign In' | translate}}">
                 </form>
             </div>
             <div class="toggle-container">
                 <div class="toggle">
                     <div class="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p>Enter your personal details to use all of site features</p>
-                        <button class="hidden" id="login" (click)="loginBtn()">Sign In</button>
+                        <h1>{{"Welcome Back!" | translate}}</h1>
+                        <p>{{"Enter your personal details to use all of site features." | translate}}</p>
+                        <button class="hidden" id="login" (click)="loginBtn()">{{"Sign In" | translate}}</button>
                     </div>
                     <div class="toggle-panel toggle-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>Register with your personal details to use all of site features</p>
-                        <button class="hidden" id="register" (click)="registerBtn()">Sign Up</button>
+                        <h1>{{"Hello, Friend!" | translate}}</h1>
+                        <p>{{"Register with your personal details to use all of site features." | translate}}</p>
+                        <button class="hidden" id="register" (click)="registerBtn()">{{"Sign Up" | translate}}</button>
                     </div>
                 </div>
             </div>

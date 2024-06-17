@@ -4,6 +4,7 @@ import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { last } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-login-page',
@@ -15,7 +16,8 @@ import { last } from 'rxjs';
         CommonModule,
         BasicLayoutComponent,
         FontAwesomeModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule
         
     ]
 })
@@ -30,6 +32,8 @@ export class LoginPageComponent implements OnInit,OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.renderer.addClass(document.body, 'login-background');
     }
+    this.createLoginForm();
+    this.createRegisterForm();
   }
 
   ngOnDestroy(): void {
@@ -44,7 +48,7 @@ export class LoginPageComponent implements OnInit,OnDestroy {
     })
   }
   createRegisterForm() {
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
       firstName: ["",[Validators.required]],
       lastName:["",[Validators.required]],
       email: ["", [Validators.required]],
@@ -61,10 +65,10 @@ loginBtn() {
 
 
 checkUser() {
-throw new Error('Method not implemented.');
+
 }
 createUser() {
-throw new Error('Method not implemented.');
+
 }
 
 

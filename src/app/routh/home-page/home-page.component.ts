@@ -1,9 +1,10 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, Output, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.component";
 
 import { LocationComponent } from "../../shared/location/location.component";
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HotelFilterComponent } from "../../shared/hotel-filter/hotel-filter.component";
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,13 +19,15 @@ export class HomePageComponent implements OnInit,OnDestroy {
 
     constructor(
         private renderer: Renderer2,
-        @Inject(PLATFORM_ID) private platformId: Object
+        @Inject(PLATFORM_ID) private platformId: Object,
       ) {}
     
       ngOnInit(): void {
         if (isPlatformBrowser(this.platformId)) {
           this.renderer.addClass(document.body, 'homepage-background');
         }
+       
+
       }
     
       ngOnDestroy(): void {
@@ -35,4 +38,5 @@ export class HomePageComponent implements OnInit,OnDestroy {
 onFilterChange(active: boolean) {
         this.active = active;
     }
+    
 }
