@@ -1,0 +1,18 @@
+<div class="support-request-form">
+    <h2>{{ 'CREATE_SUPPORT_REQUEST' | translate }}</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">{{ 'EMAIL' | translate }}</label>
+        <input id="email" name="email" [(ngModel)]="supportRequest.userEmail" required>
+      </div>
+      <div>
+        <label for="subject">{{ 'SUBJECT' | translate }}</label>
+        <input id="subject" name="subject" [(ngModel)]="supportRequest.subject" required>
+      </div>
+      <div>
+        <label for="description">{{ 'DESCRIPTION' | translate }}</label>
+        <textarea id="description" name="description" [(ngModel)]="supportRequest.description" required></textarea>
+      </div>
+      <button type="submit">{{ 'SUBMIT' | translate }}</button>
+    </form>
+  </div>

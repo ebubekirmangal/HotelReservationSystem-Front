@@ -1,5 +1,5 @@
 img{
-    width: 200px;
+    width: 300px;
     
 }
 .icon{
@@ -7,16 +7,19 @@ img{
     margin-right: 5px;
     font-size: 20px;
 }
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
     margin-top: 15px;
-    background-color: #fff;
-    border-top:2px solid #ff942c ;
-    border-bottom:2px solid #ff942c;
+    background-color: rgba(255, 255, 255, 0.6); /* Beyaz rengin şeffaf versiyonu */
+     /* Buraya arkaplan resminizin yolunu yazın */
+    background-size: cover; /* Arkaplan resminin boyutunu kapsayacak şekilde ayarlar */
+    border-top: 2px solid #ff942c;
+    border-bottom: 2px solid #ff942c;
 }
+
 ul{
     display: flex;
     justify-content: space-between;

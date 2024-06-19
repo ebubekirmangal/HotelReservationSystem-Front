@@ -1,0 +1,10 @@
+<div class="support-request-list">
+    <h2>{{ 'SUPPORT_REQUESTS' | translate }}</h2>
+    <ul>
+      <li *ngFor="let request of supportRequests">
+        <h3>{{ request.subject }}</h3>
+        <p>{{ request.description }}</p>
+        <p><strong>{{ 'STATUS' | translate }}:</strong> {{ request.status }}</p>
+      </li>
+    </ul>
+  </div>

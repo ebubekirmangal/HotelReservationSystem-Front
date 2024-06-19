@@ -1,0 +1,10 @@
+.help-support-container{
+    padding: 20px;
+
+}
+.help-support-container h1{
+    text-align: center;
+}
+.support-request-form,.support-request-list{
+    margin-top: 20px;
+}
