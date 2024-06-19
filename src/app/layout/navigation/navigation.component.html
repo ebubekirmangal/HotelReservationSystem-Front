@@ -1,12 +1,44 @@
 <nav>
-    <a routerLink="/home">
-        <div class="logo">
-        <img src="/assets/logo/logo.png" alt="logo">
+  <a routerLink="/home">
+    <div class="logo">
+      <img src="/assets/logo/logo.png" alt="logo">
     </div>
-</a>
-    <ul>
-        <a routerLink=""><li><i class="fa-solid fa-heart icon"></i>Favoriler</li></a>
-        <a><li><i class="fa-solid fa-earth-americas icon"></i>{{Language}}-{{Currency}}</li></a>
-        <a routerLink="/login"><li id="login"><i class="fa-solid fa-user icon"></i>Giriş Yap</li></a>
-    </ul>
+  </a>
+  <ul>
+    <li>
+      <a routerLink="">
+        <button><i class="fa-solid fa-heart icon"></i>{{ 'FAVORITES' | translate }}</button>
+      </a>
+    </li>
+    <li>
+      <button>
+        <i class="fa-solid fa-earth-americas icon"></i>
+        <select (change)="switchLanguage($event)">
+          <option value="tr">Türkçe</option>
+          <option value="en">English</option>
+        </select>
+        -
+        <select (change)="switchCurrency($event)">
+          <option value="TRY">TRY</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </button>
+    </li>
+    <li>
+      <a routerLink="/faq">
+        <button id="faq"><i class="fa-solid fa-user icon"></i>{{ 'FAQ' | translate }}</button>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/help-support">
+        <button id="help-support"><i class="fa-solid fa-life-ring icon"></i>{{ 'HELP_SUPPORT' | translate }}</button>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/login">
+        <button id="login"><i class="fa-solid fa-user icon"></i>{{ 'LOGIN' | translate }}</button>
+      </a>
+    </li>
+  </ul>
 </nav>

@@ -37,9 +37,9 @@ export class HotelFilterComponent {
       console.log('Çıkış Tarihi:', this.checkOutDate);
       // Burada arama işlemi yapılabilir.
     }
-    isActive() {
-      this.active=!this.active;
-      this.changeClick.emit(this.active)
+    openOverlay(){
+      this.changeClick.emit(true);
     }
+   
 
 }

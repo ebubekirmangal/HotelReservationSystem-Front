@@ -1,19 +1,32 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Component } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CurrencyFormatPipe } from '../../shared/pipes/currency-format.pipe';
 
 @Component({
   selector: 'app-navigation',
-  standalone: true,
-  imports: [
-    CommonModule,FontAwesomeModule,RouterModule
-  ],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./navigation.component.css'],
+  standalone: true,
+  imports: [CurrencyFormatPipe,TranslateModule]
 })
 export class NavigationComponent {
-Language:string="Türkçe";
-Currency:string="TRY";
- }
+  Language = 'Türkçe';
+  Currency = 'TRY';
+
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('tr');
+  }
+
+  switchLanguage(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    const lang = selectElement.value;
+    this.translate.use(lang);
+    this.Language = lang === 'tr' ? 'Türkçe' : 'English'; // Dil değişimi sonrası güncelle
+  }
+
+  switchCurrency(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    const currency = selectElement.value;
+    this.Currency = currency;
+  }
+}
