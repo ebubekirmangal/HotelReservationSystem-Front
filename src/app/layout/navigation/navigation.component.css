@@ -1,5 +1,5 @@
 img{
-    width: 300px;
+    width: 250px;
     
 }
 .icon{
@@ -7,17 +7,19 @@ img{
     margin-right: 5px;
     font-size: 20px;
 }
-nav {
+nav  {
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
     margin-top: 15px;
-    background-color: rgba(255, 255, 255, 0.6); /* Beyaz rengin şeffaf versiyonu */
+    background-color:#fff;  /* Beyaz rengin şeffaf versiyonu */
      /* Buraya arkaplan resminizin yolunu yazın */
     background-size: cover; /* Arkaplan resminin boyutunu kapsayacak şekilde ayarlar */
     border-top: 2px solid #ff942c;
     border-bottom: 2px solid #ff942c;
+    
 }
 
 ul{
@@ -64,3 +66,56 @@ option:hover{
     justify-content: center;
     align-items: center;
 }
+  .toggle-btn{
+    color:orange;
+    font-size:1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+/* DROPDOWNMENU */
+.dropdown-menu{
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+  }
+  .dropdown-menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+  }
+  .dropdown-menu.open{
+    height: 190px;
+  }
+  .dropdown-menu .login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  /* RESPONSIVE DESIGN */
+  @media(max-width:992px){
+     ul,
+     .login{
+      display: none;
+    }
+    .toggle-btn{
+      display: block;
+    }
+    .dropdown-menu{
+      display:block ;
+    }
+  }
+  @media(max-width:576px){
+    .dropdown-menu{
+      left: 2rem;
+      width: unset;
+    }
+  }

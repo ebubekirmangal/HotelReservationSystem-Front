@@ -9,9 +9,26 @@
         <li><i class="fa-solid fa-earth-americas icon"></i><select (change)="changeLanguage($event.target['value'])" [(ngModel)]="selectedLanguage">
             <option value="en">English</option>
             <option value="tr">Türkçe</option>
-            <!-- <option value="ru">Русский-RU</option> -->
         </select></li>
         <a routerLink="/help-support" class="log"><li id="login">{{"Support" | translate}}</li></a>
         <a routerLink="/login" class="log"><i class="fa-solid fa-user icon"></i><li id="login">{{"Login" | translate}}</li></a>
     </ul>
+    <div class="toggle-btn" (click)="toggleDropdownMenu()">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+<div class="dropdown-menu">
+  <a routerLink="">
+      <li>{{"Favorites" | translate}}</li>
+  </a>
+  <a routerLink="/help-support">
+      <li>{{"TR-TRY" | translate}}</li>
+  </a>
+  <a routerLink="/help-support">
+      <li>{{"Support" | translate}}</li>
+  </a>
+  <a routerLink="/login" class="login">
+      <li>{{"Login" | translate}}</li>
+  </a>
+</div>
 </nav>

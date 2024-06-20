@@ -6,11 +6,12 @@ body{
     /*background-color: #dedede;*/
      /*3.jpg anasayfa, 2.jpg giriş sayfası*/
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     overflow-x:hidden;
     overflow-y: hidden;
     height: max-content;
+    
 }
 
 html, body { height: 100%; }
