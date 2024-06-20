@@ -1,18 +1,30 @@
-<div class="support-request-form">
-    <h2>{{ 'CREATE_SUPPORT_REQUEST' | translate }}</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="email">{{ 'EMAIL' | translate }}</label>
-        <input id="email" name="email" [(ngModel)]="supportRequest.userEmail" required>
-      </div>
-      <div>
-        <label for="subject">{{ 'SUBJECT' | translate }}</label>
-        <input id="subject" name="subject" [(ngModel)]="supportRequest.subject" required>
-      </div>
-      <div>
-        <label for="description">{{ 'DESCRIPTION' | translate }}</label>
-        <textarea id="description" name="description" [(ngModel)]="supportRequest.description" required></textarea>
-      </div>
-      <button type="submit">{{ 'SUBMIT' | translate }}</button>
+<div class="main">
+    <h2>{{ 'Create Support' | translate }}</h2>
+    <div class="form">
+      <form (ngSubmit)="onSubmit()">
+      <table> 
+        <tr>
+        <td> <label for="email">{{ 'Email' | translate }}:</label> </td>
+        <td> <input type="email" id="email" name="email" [(ngModel)]="supportRequest.userEmail" required></td>
+      </tr>
+      <tr>
+        <td> <label for="subject">{{ 'Subject' | translate }}:</label></td>
+        <td> <input type="text" id="subject" name="subject" [(ngModel)]="supportRequest.subject" required></td>
+      </tr>
+      <tr>
+        <td> <label for="description">{{ 'Description' | translate }}:</label></td>
+        <td><textarea id="description" name="description" [(ngModel)]="supportRequest.description" required></textarea></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="button">  <input type="submit" id="submit-btn" value="{{ 'Submit' | translate }}"></td>
+      </tr>
+      </table>
+    
+      
+
+     
+    
     </form>
-  </div>
+    </div>
+      </div>

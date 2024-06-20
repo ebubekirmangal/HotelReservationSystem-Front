@@ -1,0 +1,43 @@
+h2 {
+    text-align: center;
+}
+input[type="text"],input[type="email"], textarea {
+    padding: 5px;
+    outline: 0;
+    border: 0;
+    width: 250px;
+
+}
+input{
+    margin-bottom: 10px;
+}
+textarea{
+    height: 70px;
+    resize: none;
+}
+label{
+    margin-bottom: 5px;
+   
+    margin: 0 0 70px 0;  /*sonra bakılayacak */
+}
+#submit-btn{
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px auto;
+    width: 150px;
+    
+    
+
+}
+.button{
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.main{
+    background-color: #dedede;
+    padding: 15px;
+    width: 350px;
+    border-radius: 5px;
+}

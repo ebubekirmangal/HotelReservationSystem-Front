@@ -33,6 +33,7 @@ export class HelpSupportComponent implements OnInit,OnDestroy {
           this.renderer.removeClass(document.body, 'help-support-background');
         }
       }
+      /*submit olayından sonra gelecek onay componentini yaz*/
    
     
 

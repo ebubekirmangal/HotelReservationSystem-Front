@@ -1,10 +1,17 @@
 .help-support-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 20px;
+
+    
 
 }
 .help-support-container h1{
     text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
 }
-.support-request-form,.support-request-list{
-    margin-top: 20px;
-}
+
+
