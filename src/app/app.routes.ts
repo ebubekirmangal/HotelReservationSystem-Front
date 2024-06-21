@@ -10,7 +10,7 @@ import { HelpSupportComponent } from './shared/help-support/help-support.compone
 
 export const routes: Routes = [
     {
-        path: '', redirectTo: '/help-support', pathMatch: 'full' 
+        path: '', redirectTo: '/faqs', pathMatch: 'full' 
     },
   
     {

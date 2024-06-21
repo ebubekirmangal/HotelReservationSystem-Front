@@ -20,11 +20,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class SupportRequestFormComponent {
   supportRequest: SupportRequest = {
-    id: null,
     userEmail: '',
     subject: '',
     description: '',
-    status: ''
+    status: false
   };
 
   constructor(private supportRequestService: SupportRequestService) {}
