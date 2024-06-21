@@ -1,121 +1,141 @@
-img{
-    width: 250px;
-    
-}
-.icon{
-    color: #ff942c;
-    margin-right: 5px;
-    font-size: 20px;
-}
-nav  {
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    margin-top: 15px;
-    background-color:#fff;  /* Beyaz rengin şeffaf versiyonu */
-     /* Buraya arkaplan resminizin yolunu yazın */
-    background-size: cover; /* Arkaplan resminin boyutunu kapsayacak şekilde ayarlar */
-    border-top: 2px solid #ff942c;
-    border-bottom: 2px solid #ff942c;
-    
+img {
+  width: 250px;
+
 }
 
-ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
+.icon {
+  color: #ff942c;
+  margin-right: 5px;
+  font-size: 20px;
 }
-ul a{
-    text-decoration: none;
-    color: black;
+
+nav {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  margin-top: 15px;
+  background-color: #fff;
+  /* Beyaz rengin şeffaf versiyonu */
+  /* Buraya arkaplan resminizin yolunu yazın */
+  background-size: cover;
+  /* Arkaplan resminin boyutunu kapsayacak şekilde ayarlar */
+  border-top: 2px solid #ff942c;
+  border-bottom: 2px solid #ff942c;
+
 }
-li{
-    font-weight: 550;
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
 }
-#login{
-    border: 2px solid #ff942c;
-    border-radius: 20px;
-    padding: 6.5px 20px;
+
+ul a {
+  text-decoration: none;
+  color: black;
 }
-select{
-    font-weight: 550; 
-    border: 2px solid #ff942c;
-    border-radius: 20px;
-    padding: 8px;
-    cursor: pointer;
-    outline: 0;
+
+li {
+  font-weight: 550;
 }
-option{
-    background-color: #ff942c; 
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
+
+#login {
+  border: 2px solid #ff942c;
+  border-radius: 20px;
+  padding: 6.5px 20px;
 }
-option:hover{
-    background-color: #ffffff; 
-    color: #ff942c;
-    cursor: pointer;
-    font-weight: 550;
+
+select {
+  font-weight: 550;
+  border: 2px solid #ff942c;
+  border-radius: 20px;
+  padding: 8px;
+  cursor: pointer;
+  outline: 0;
 }
-.log{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+option {
+  background-color: #ff942c;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
 }
-  .toggle-btn{
-    color:orange;
-    font-size:1.5rem;
-    cursor: pointer;
+
+option:hover {
+  background-color: #ffffff;
+  color: #ff942c;
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn {
+  color: #ff942c;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 101;
+}
+
+/* DROPDOWNMENU */
+.dropdown-menu {
+  position: absolute;
+  right: 41px;
+  top: 80px;
+  width: 300px;
+  height: 0;
+  background-color: #ff942c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+}
+.dropdown-menu a{
+  text-decoration: none;
+}
+.dropdown-menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-bottom: 1px solid white ;
+}
+
+.dropdown-menu.open {
+  height: 172.8px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:992px) {
+
+  ul 
+  {
     display: none;
   }
-/* DROPDOWNMENU */
-.dropdown-menu{
-    position: absolute;
-    right: 2rem;
-    top: 60px;
-    width: 300px;
-    height: 0;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+
+  .toggle-btn {
+    display: block;
   }
-  .dropdown-menu li{
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
+
+  .dropdown-menu,.dropdown-menu ul {
+    display: block;
+    padding: 0;
   }
-  .dropdown-menu.open{
-    height: 190px;
+}
+
+@media(max-width:576px) {
+  .dropdown-menu {
+    left: 2rem;
+    width: unset;
   }
-  .dropdown-menu .login{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
- 
-  /* RESPONSIVE DESIGN */
-  @media(max-width:992px){
-     ul,
-     .login{
-      display: none;
-    }
-    .toggle-btn{
-      display: block;
-    }
-    .dropdown-menu{
-      display:block ;
-    }
-  }
-  @media(max-width:576px){
-    .dropdown-menu{
-      left: 2rem;
-      width: unset;
-    }
-  }
+}

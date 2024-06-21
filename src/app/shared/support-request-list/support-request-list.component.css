@@ -1,26 +1,38 @@
-ul{
+ul {
     list-style: none;
 }
-.message{
-    background-color: #dedede;
+.message {
+    background-color: #ff942c;
     padding: 0px;
-    width: 350px;
+    width: 400px;
     border-radius: 10px;
+    border:2px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35) ;
+    margin-bottom: 20px;
 }
-#email{
+#email {
     border-bottom: 1px solid black;
     padding: 5px;
     background-color: white;
     border-radius: 10px 10px 0 0;
 }
-.info{
+.info {
     padding: 5px;
 }
-textarea{
-resize: none;
-height: 50px;
-width: 98%;
+#description {
+    resize: none;
+    height: 50px;
+    width: 380px;
+    background-color: white;
+    padding: 5px ;
 }
-#subject{
+
+#subject {
     margin-bottom: 5px;
+    color: white;
+    text-indent: 4px;
+    font-weight: 500;
+}
+h2{
+    text-align: center;
 }

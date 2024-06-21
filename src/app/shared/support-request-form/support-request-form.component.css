@@ -4,7 +4,7 @@ h2 {
 input[type="text"],input[type="email"], textarea {
     padding: 5px;
     outline: 0;
-    border: 0;
+    border: 1px solid #ff942c;
     width: 250px;
 
 }
@@ -15,19 +15,25 @@ textarea{
     height: 70px;
     resize: none;
 }
-label{
-    margin-bottom: 5px;
-   
-    margin: 0 0 70px 0;  /*sonra bakılayacak */
+tr td:first-child{
+    vertical-align: top;
+    
 }
 #submit-btn{
     border-radius: 20px;
     padding: 5px 10px;
     margin: 5px auto;
     width: 150px;
-    
-    
-
+    border: 1px solid #ff942c;
+    background-color:#ff942c;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+#submit-btn:hover{
+    transform: scale(0.98);
+    background-color: #fff;
+    color: #ff942c;
 }
 .button{
     
@@ -36,8 +42,10 @@ label{
     align-items:center;
 }
 .main{
-    background-color: #dedede;
+    background-color: #fff;
+    border: 1px solid #ff942c;
     padding: 15px;
     width: 350px;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35) ;
 }

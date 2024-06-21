@@ -14,8 +14,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './support-request-list.component.html',
   styleUrl: './support-request-list.component.css'
 })
+//veritabanından gelecek
+//sayfa height'ı ayarlanacak
 export class SupportRequestListComponent implements OnInit{
-supportRequests:SupportRequest[]=[{userEmail:'1234@gmail.com',subject:'konu',status:false,description:'açıklama'}];
+supportRequests:SupportRequest[]=[{userEmail:'1234@gmail.com',subject:'konu',status:false,description:'açıklama'},
+  {userEmail:'1234@gmail.com',subject:'konu',status:false,description:'açıklama'},
+  {userEmail:'1234@gmail.com',subject:'konu',status:false,description:'açıklama'}];
 
 constructor(private supportRequestService:SupportRequestService){}
   ngOnInit(): void {

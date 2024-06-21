@@ -1,0 +1,118 @@
+.information{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background-color: white;
+    height: 600px;
+    width: 400px;}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    /* Maksimum genişlik */
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.exit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn {
+    background-color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #e0f7fa;
+    border-radius: 100px;
+}
+
+.search {
+    width: 100%;
+    padding: 0px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    /* box-sizing: border-box; */
+}
+.popular-destinations h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.popular-destinations {
+    overflow-y: auto;
+    height: 385px;
+}
+
+.location {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.locations {
+    overflow-y: auto;
+    height: 295px;
+}
+
+.location:hover {
+    background-color: rgb(225, 241, 254);
+}
+
+.location-info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.local {
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.icon-close {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.icon-location {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+small{
+    font-size: 12px;
+    text-indent: 12px;
+}

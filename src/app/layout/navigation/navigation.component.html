@@ -1,34 +1,51 @@
 <nav>
     <a routerLink="/home">
         <div class="logo">
-        <img src="/assets/logo/CheckInflex.png4.png" alt="logo">
-    </div>
-</a>
+            <img src="/assets/logo/CheckInflex.png4.png" alt="logo">
+        </div>
+    </a>
     <ul>
-        <a routerLink=""><li><i class="fa-solid fa-heart icon"></i>{{"Favorites" | translate}}</li></a>
-        <li><i class="fa-solid fa-earth-americas icon"></i><select (change)="changeLanguage($event.target['value'])" [(ngModel)]="selectedLanguage">
-            <option value="en">English</option>
-            <option value="tr">Türkçe</option>
-        </select></li>
-        <a routerLink="/help-support" class="log"><li id="login">{{"Support" | translate}}</li></a>
-        <a routerLink="/login" class="log"><i class="fa-solid fa-user icon"></i><li id="login">{{"Login" | translate}}</li></a>
+        <a routerLink="">
+            <li><i class="fa-solid fa-heart icon"></i>{{"Favorites" | translate}}</li>
+        </a>
+        <li><i class="fa-solid fa-earth-americas icon"></i><select (change)="changeLanguage($event.target['value'])"
+                [(ngModel)]="selectedLanguage">
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select></li>
+        <li>
+            <select (change)="switchCurrency($event)">
+                <option value="TRY">TRY</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </li>
+        <a routerLink="/help-support" class="log">
+            <li id="login">{{"Support" | translate}}</li>
+        </a>
+        <a routerLink="/login" class="log"><i class="fa-solid fa-user icon"></i>
+            <li id="login">{{"Login" | translate}}</li>
+        </a>
     </ul>
     <div class="toggle-btn" (click)="toggleDropdownMenu()">
-    <i class="fa-solid fa-bars"></i>
-</div>
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-<div class="dropdown-menu">
-  <a routerLink="">
-      <li>{{"Favorites" | translate}}</li>
-  </a>
-  <a routerLink="/help-support">
-      <li>{{"TR-TRY" | translate}}</li>
-  </a>
-  <a routerLink="/help-support">
-      <li>{{"Support" | translate}}</li>
-  </a>
-  <a routerLink="/login" class="login">
-      <li>{{"Login" | translate}}</li>
-  </a>
-</div>
+    <div class="dropdown-menu">
+        <ul>
+            <a routerLink="">
+                <li>{{"Favorites" | translate}}</li>
+            </a>
+            <a routerLink="/help-support">
+                <li>{{"TR-TRY" | translate}}</li>
+            </a>
+            <a routerLink="/help-support">
+                <li>{{"Support" | translate}}</li>
+            </a>
+            <a routerLink="/login">
+                <li>{{"Login" | translate}}</li>
+            </a>
+        </ul>
+
+    </div>
 </nav>

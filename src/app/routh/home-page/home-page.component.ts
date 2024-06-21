@@ -8,35 +8,39 @@ import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
-    selector: 'app-home-page',
-    standalone: true,
-    templateUrl: './home-page.component.html',
-    styleUrl: './home-page.component.css',
-    imports: [BasicLayoutComponent, LocationComponent, CommonModule, HotelFilterComponent]
+  selector: 'app-home-page',
+  standalone: true,
+  templateUrl: './home-page.component.html',
+  styleUrl: './home-page.component.css',
+  imports: [BasicLayoutComponent, LocationComponent, CommonModule, HotelFilterComponent]
 })
-export class HomePageComponent implements OnInit,OnDestroy {
-    active:boolean;
+export class HomePageComponent implements OnInit, OnDestroy {
+  active: boolean = false;
+  showOverlay: boolean = false;
+  constructor(
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) { }
 
-    constructor(
-        private renderer: Renderer2,
-        @Inject(PLATFORM_ID) private platformId: Object,
-      ) {}
-    
-      ngOnInit(): void {
-        if (isPlatformBrowser(this.platformId)) {
-          this.renderer.addClass(document.body, 'homepage-background');
-        }
-       
-
-      }
-    
-      ngOnDestroy(): void {
-        if (isPlatformBrowser(this.platformId)) {
-          this.renderer.removeClass(document.body, 'homepage-background');
-        }
-      }
-onFilterChange(active: boolean) {
-        this.active = active;
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.addClass(document.body, 'homepage-background');
     }
-    
+
+
+  }
+
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.removeClass(document.body, 'homepage-background');
+    }
+  }
+  onFilterChange(active: boolean) {
+    this.active = active;
+    this.showOverlay = true;
+  }
+  closeOverlay() {
+    this.showOverlay = false;
+  }
+
 }

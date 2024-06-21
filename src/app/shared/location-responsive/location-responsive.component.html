@@ -1,0 +1,26 @@
+<div class="overlay">
+    <div class="container">
+        <div class="information">
+            <div class="exit">
+                <button class="close-btn" (click)="closeOverlay()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <input class="search" type="text" placeholder="Varış noktası">
+            <hr>
+            <div class="popular-destinations">
+                <h3>Popüler tatil noktaları</h3>
+                @for (item of listAddress; track $index) {
+                    <div class="location">
+                        <div class="icon-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div class="location-info">
+                            <span class="local">{{item.town}}</span>
+                            <small>{{item.city}}, {{item.country}}</small>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

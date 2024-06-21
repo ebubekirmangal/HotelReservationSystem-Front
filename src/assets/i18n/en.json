@@ -31,6 +31,7 @@
     "Password":"Password",
     "Password Confirm":"Password Confirm",
     "First Name":"First Name",
-    "Last Name":"Last Name"
-    
+    "Last Name":"Last Name",
+    "Submit":"Submit",
+    "Description":"Description"
 }

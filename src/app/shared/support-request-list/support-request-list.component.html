@@ -5,12 +5,11 @@
     <li>
       <div id="email"><small>{{request.userEmail}}</small></div>
       <div class="info">
-        <div id="subject">{{ request.subject }}</div>
-      <textarea>{{ request.description }}</textarea>
+        <div id="subject">{{ request.subject | uppercase}}</div>
+      <div id="description">{{ request.description }}</div>
       <!-- <p><strong>{{ 'STATUS' | translate }}:</strong> {{ request.status }}</p> -->
       </div>
     </li>
   </div>
-
   }
 </ul>

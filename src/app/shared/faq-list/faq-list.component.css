@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    margin-top: 20px;
+    margin-top: 50px;
+    
 }
 ul{
     list-style: none;
@@ -12,4 +13,17 @@ li{
     border: 1px solid black;
     width: 420px;
     padding: 10px 5px;
+    text-indent: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+li:hover{
+    background-color: rgb(225, 241, 254);
+    
+}
+.answer{
+    border: 1px solid black;
+    width: 420px;
+    padding: 10px 5px;
+    margin-bottom: 30px;
 }

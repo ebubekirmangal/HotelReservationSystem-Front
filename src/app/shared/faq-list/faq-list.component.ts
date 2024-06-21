@@ -31,6 +31,8 @@ faqs:Faq[];
 ];
 
 toggleAnswer(index: number): void {
-  this.faqList[index].showAnswer = !this.faqList[index].showAnswer;
+  this.faqList.forEach((faq, i) => {
+      faq.showAnswer = i === index ? !faq.showAnswer : false;
+  });
 }
 }

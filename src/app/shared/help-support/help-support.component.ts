@@ -12,7 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
     standalone: true,
     templateUrl: './help-support.component.html',
     styleUrl: './help-support.component.css',
-    imports: [SupportRequestFormComponent, TranslateModule, BasicLayoutComponent]
+    imports: [ TranslateModule, BasicLayoutComponent, SupportRequestListComponent]
 })
 export class HelpSupportComponent implements OnInit,OnDestroy {
     constructor(

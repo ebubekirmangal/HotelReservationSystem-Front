@@ -110,7 +110,7 @@ export class HotelFilterComponent implements AfterViewChecked {
 
   isActive() {
     this.active = !this.active;
-    this.changeClick.emit(this.active);
+    this.changeClick.emit(true);
   }
   giveInfos(address:Address){
     this.selectedLocationInfo = address;
