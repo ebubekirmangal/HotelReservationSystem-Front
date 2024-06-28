@@ -1,0 +1,15 @@
+.content{
+    background-color: #fff;
+    width: 300px;
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    display: flex;
+    padding: 15px 5px;
+    box-shadow: 1px 1px 5px black;
+    display: none;
+    text-align: center;
+}
+.content.active{
+    display: block;
+}

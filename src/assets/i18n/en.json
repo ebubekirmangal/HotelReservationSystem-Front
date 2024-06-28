@@ -30,6 +30,15 @@
     "Password":"Password",
     "Password Confirm":"Password Confirm",
     "First Name":"First Name",
-    "Last Name":"Last Name"
-    
+    "Last Name":"Last Name",
+    "Hotel Name":"Hotel Name",
+    "Phone":"Phone",
+    "City":"City",
+    "District":"District",
+    "Address":"Address",
+    "Enter your detailed address information":"Enter your detailed address information",
+    "Please Enter the Required Information to Add Your Hotel to Our Site":"Please Enter the Required Information to Add Your Hotel to Our Site",
+    "Admin Registration":"Admin Registration",
+    "Admin Login":"Admin Login",
+    "Please Enter the Required Information to Perform Hotel-Related Transactions":"Please Enter the Required Information to Perform Hotel-Related Transactions"
 }

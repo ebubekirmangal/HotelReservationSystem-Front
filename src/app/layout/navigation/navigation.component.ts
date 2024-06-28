@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnChanges, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,16 +20,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationComponent implements OnChanges{
-selectedLanguage: string = "English";
+  selectedLanguage: string = 'English';
 
-constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService,
+     @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    const defaultLanguage = localStorage.getItem('language') || 'en';
-    this.selectedLanguage = defaultLanguage; 
-    this.translate.setDefaultLang(defaultLanguage); 
-    this.translate.use(defaultLanguage);
-    this.changeLanguage(this.selectedLanguage);
+    if (isPlatformBrowser(this.platformId)) {
+      const defaultLanguage = localStorage.getItem('language') || 'en';
+      this.selectedLanguage = defaultLanguage; 
+      this.translate.setDefaultLang(defaultLanguage); 
+      this.translate.use(defaultLanguage);
+      this.changeLanguage(this.selectedLanguage);
+    }
   }
 
   ngOnChanges(): void {
@@ -38,6 +41,9 @@ constructor(private translate: TranslateService) {}
 
   changeLanguage(lang: string): void {
     this.translate.use(lang); 
-    localStorage.setItem('language', lang); 
-    this.selectedLanguage = lang;}
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('language', lang); 
+    }
+    this.selectedLanguage = lang;
+  }
  }

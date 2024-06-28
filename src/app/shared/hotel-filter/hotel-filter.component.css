@@ -12,12 +12,12 @@
   align-items: center;
   margin: 30px auto 0 auto;
   height: 45px;
+  width: max-content;
   gap: 20px;
   background-color: #fff;
   padding: 30px 20px 10px 20px;
   border: 2px solid #f07417;
   border-radius: 500px;
-  width: max-content;
   }
 .location{
   display: flex;
@@ -76,4 +76,8 @@
   position: absolute;
   left: 0;
   top: 40px;
+}
+button,input{
+  width: 150px;
+  height: 50px;
 }

@@ -14,7 +14,7 @@
                     <input type="email" placeholder="{{'Email' | translate}}" formControlName="email" name="email">
                     <input type="password" placeholder="{{'Password' | translate}}" formControlName="password" name="password">
                     <input type="password" placeholder="{{'Password Confirm' | translate}}" formControlName="passwordConfirm" name="passwordConfirm">
-                    <input type="submit" value="{{'Sign Up' | translate}}">
+                    <input type="submit" value="{{'Sign Up' | translate}}" [disabled]="!registerForm.valid">
                 </form>
             </div>
             <div class="form-container sign-in">
@@ -28,7 +28,7 @@
                     <input type="email" placeholder="{{'Email' | translate}}" formControlName="email" name="email">
                     <input type="password" placeholder="{{'Password' | translate }}" formControlName="password" name="password">
                     <a href="#">{{"Forget Your Password" | translate}} ?</a>
-                    <input type="submit" value="{{'Sign In' | translate}}">
+                    <input type="submit" value="{{'Sign In' | translate}}" [disabled]="!loginForm.valid">
                 </form>
             </div>
             <div class="toggle-container">
@@ -47,4 +47,5 @@
             </div>
         </div>
     </div>
+    <app-time-display  [isSubmit]="submit" [message]="message" [color]="color"></app-time-display>
 </app-basic-layout>

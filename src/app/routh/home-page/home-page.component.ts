@@ -4,8 +4,6 @@ import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.com
 import { LocationComponent } from "../../shared/location/location.component";
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HotelFilterComponent } from "../../shared/hotel-filter/hotel-filter.component";
-import { TranslateService } from '@ngx-translate/core';
-
 
 @Component({
     selector: 'app-home-page',
@@ -16,10 +14,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePageComponent implements OnInit,OnDestroy {
     active:boolean;
-
     constructor(
         private renderer: Renderer2,
-        @Inject(PLATFORM_ID) private platformId: Object,
+        @Inject(PLATFORM_ID) private platformId: Object
       ) {}
     
       ngOnInit(): void {
@@ -38,5 +35,4 @@ export class HomePageComponent implements OnInit,OnDestroy {
 onFilterChange(active: boolean) {
         this.active = active;
     }
-    
 }

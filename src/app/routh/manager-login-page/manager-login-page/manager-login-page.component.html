@@ -1,0 +1,97 @@
+<app-basic-layout>
+    <div class="container">
+        <div class="content">
+            <div class="form-components" [ngClass]="{'moved': moveForm}">
+@if (moveForm) {
+    <form [formGroup]="registerForm" (ngSubmit)="createManager()">
+        <div class="form">
+                <div class="form-left">
+                    <label for="hotelName">{{"Hotel Name" | translate}}</label><br>
+                    <input id="hotelName" formControlName="hotelName" type="text" placeholder="{{'Hotel Name' | translate}}"><br>
+    
+                    <label for="phone">{{"Phone" | translate}}</label><br>
+                    <input id="phone" formControlName="phone" type="tel" placeholder="(555) 555 55 55"><br>
+    
+                    <label for="email">{{"Email" | translate}}</label><br>
+                    <input id="email" formControlName="email" type="email" placeholder="example@gmail.com"><br>
+    
+                    <label for="password">{{"Password" | translate}}</label><br>
+                    <input id="password" formControlName="password" type="password" placeholder="********"><br>
+    
+                    <label for="confirmPassword">{{"Password Confirm" | translate}}</label><br>
+                    <input id="confirmPassword" formControlName="confirmPassword" type="password"
+                                placeholder="********">
+                </div>
+    
+                <div class="address">
+                    <div class="general-area">
+                        <div class="city">
+                            <label for="city">{{"City" | translate}}</label><br>
+                            <select id="city" formControlName="city">
+                                <option value="İstanbul" selected>İstanbul</option>
+                                <option value="Manisa">Manisa</option>
+                                <option value="Aydın">Aydın</option>
+                            </select>
+                        </div>
+                        <div class="district">
+                            <label for="district">{{"District" | translate}}</label><br>
+                            <select id="district" formControlName="district">
+                                <option value="İstanbul" selected>İstanbul</option>
+                                <option value="Manisa">Manisa</option>
+                                <option value="Aydın">Aydın</option>
+                            </select>
+                        </div>
+                    </div>
+                            <br>
+                    <label for="address">{{"Address" | translate}}</label><br>
+                    <textarea id="address" formControlName="address"placeholder="{{'Enter your detailed address information' | translate}}.."></textarea><br>
+                    <input type="submit" value="{{'Sign Up' | translate}}">
+                </div>
+            </div>
+    </form>
+    }@else {
+<h2 class="form-title">{{"Sign In" | translate}}</h2>
+<div class="form-login">
+    <form [formGroup]="loginForm" (submit)="checkManager()">
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="email-login">{{"Email" | translate}}</label></td>
+                    <td><input id="email-login" type="text" placeholder="example@gmail.com"></td>
+                </tr>
+                <tr>
+                    <td><label for="password-login">{{"Password" | translate}}</label></td>
+                    <td><input id="password-login" type="password" placeholder="********"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a routerLink="">{{"Forget Your Password" | translate}} ?</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="{{'Sign In' | translate}}">
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+}
+            </div>
+<div class="selective" [ngClass]="{'moved': moveForm}">
+    @if (moveForm) {
+        <div class="chosen register">{{"Admin Login" | translate}}</div>
+        <p>{{"Please Enter the Required Information to Perform Hotel-Related Transactions" | translate}}</p><br>
+        <button (click)="toggleMove()">{{"Sign In" | translate}}</button>
+    }@else {
+        <div class="chosen register">{{"Admin Registration" | translate}}</div>
+        <p>{{"Please Enter the Required Information to Add Your Hotel to Our Site" | translate}}</p><br>
+        <button (click)="toggleMove()">{{"Sign Up" | translate}}</button>
+    }
+    </div>
+        </div>
+    </div>
+    <app-time-display [isSubmit]="submit" [message]="message" [color]="color"></app-time-display>
+</app-basic-layout>

@@ -29,8 +29,18 @@
     "ore use your email for registeration":"kayıt için e-posta adresinizi kullanın",
     "Email":"E-Posta",
     "Password":"Parola",
-    "Password Confirm":"Parola Onayla",
+    "Password Confirm":"Parola Onayı",
     "First Name":"Adınız",
-    "Last Name":"Soyadınız"
+    "Last Name":"Soyadınız",
+    "Hotel Name":"Otel Adı",
+    "Phone":"Telefon",
+    "City":"Şehir",
+    "District":"İlçe",
+    "Address":"Adres",
+    "Enter your detailed address information":"Detaylı adres bilgilerinizi giriniz",
+    "Please Enter the Required Information to Add Your Hotel to Our Site":"Otelinizi Sitemize Eklemek İçin Lütfen Gerekli Bilgileri Giriniz",
+    "Admin Registration":"Yönetici Kaydı",
+    "Admin Login":"Yönetici Girişi",
+    "Please Enter the Required Information to Perform Hotel-Related Transactions":"Otelle İlgili İşlemlerin Gerçekleştirilmesi İçin Lütfen Gerekli Bilgileri Giriniz"
     
   }

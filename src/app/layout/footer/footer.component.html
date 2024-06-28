@@ -3,13 +3,17 @@
     <ul>
         <a href="">
             <li>{{"Social Media" | translate}}</li>
-        </a><a href="">
+        </a><a routerLink="help-support">
             <li>{{"Support and Help" | translate}}</li>
         </a><a href="">
             <li>{{"About" | translate}}</li>
         </a>
     </ul>
+    @if (navigate) {
+        <a routerLink="/manager-login" class="question"><div>Bize katılmak ister misiniz ?</div></a>
+    }
     <div class="lisans">
         © 2024 {{"It is Tobeto company. All rights reserved. Your credit card information is protected by a 256 bit SSL certificate." | translate}}
     </div>
+    
 </footer>
