@@ -80,13 +80,22 @@ loginBtn() {
 
 
 checkUser() {
+  // if(!this.loginForm.valid){
+  //   this.submit = !this.submit;
+  //     this.message = "Giriş işlemi gerçekleşmedi";
+  //     this.color = "red";
+  //     if (this.submit) {
+  //       setTimeout(() => {
+  //         this.submit = false;
+  //       }, 3000); 
+  //     }
+  // }
   this.userService.login(this.loginForm.value).subscribe(
     (response) =>{
       this.submit = true;
       this.message = "Giriş işlemi başarılı şekilde gerçekleşti.";
       this.color = "#07ec16";
       this.cdr.detectChanges(); 
-      console.log("submit",this.submit);
         setTimeout(() => {
           this.submit = false;
           this.cdr.detectChanges();
@@ -98,16 +107,24 @@ checkUser() {
       this.message = "Giriş işlemi gerçekleşmedi";
       this.color = "red";
       this.cdr.detectChanges(); 
-      console.log("submit",this.submit);
         setTimeout(() => {
           this.submit = false;
           this.cdr.detectChanges(); 
-          this.router.navigate(["/home"]) 
         }, 3000);
       }
   );
 }
 createUser() {
+  if(!this.registerForm.valid){
+    this.submit = !this.submit;
+      this.message = "Giriş işlemi gerçekleşmedi";
+      this.color = "red";
+      if (this.submit) {
+        setTimeout(() => {
+          this.submit = false;
+        }, 3000); 
+      }
+  }
 this.userService.register(this.registerForm.value).subscribe(
   (response) =>{
     this.submit = true;
@@ -115,7 +132,7 @@ this.userService.register(this.registerForm.value).subscribe(
     this.router.navigate(["/home"])
     this.color = "#07ec16";
     this.cdr.detectChanges(); 
-    console.log("submit",this.submit);
+    this.router.navigate(["/home"]) 
       setTimeout(() => {
         this.submit = false;
         this.cdr.detectChanges(); 
@@ -126,7 +143,6 @@ this.userService.register(this.registerForm.value).subscribe(
     this.message = "Kayıt işlemi gerçekleşmedi";
     this.color = "red";
     this.cdr.detectChanges(); 
-    console.log("submit",this.submit);
       setTimeout(() => {
         this.submit = false;
         this.cdr.detectChanges(); 

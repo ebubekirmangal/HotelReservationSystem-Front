@@ -1,0 +1,125 @@
+
+    <div class="myHotel">
+        <div class="hotel">
+            <h2>Otel Bilgileri</h2>
+            <hr>
+            <form action="">
+                <div class="tables">
+                    <table class="table-left">
+                        <tbody>
+                            <tr>
+                                <td><label for="hotelName">Otel Adı</label></td>
+                                <td><label for="hotelStar">Otel Yıldızı</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="hotelName" placeholder="Example Name"></td>
+                                <td>
+                                    <input type="number" max="5" min="1" id="hotelStar" name="hotelStar"[(ngModel)]="rating" value="{{rating}}">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    @for (star of stars; track $index) {
+                                            <i class="fa-regular fa-star star-icon"[ngClass]="{'filled': $index < rating}"></i>
+                                            }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="hotelImg">Otel Resimleri</label>
+                                    <br>
+                                    <!-- Resim seçme inputu -->
+                                    <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
+                                </td>
+                                <td>
+                                 
+                                        <div class="image-container">
+                                        <!-- Resim gösterme alanı -->
+                                        <div *ngIf="selectedImages.length > 0" class="image-box">
+                                            <img [src]="selectedImages[currentImageIndex].url" class="selected-image">
+                                        </div>
+
+                                    <!-- Yükleme durumu gösterimi -->
+                                        <div *ngIf="selectedImages.length === 0 && !loading"class="loading-message">
+                                                    Resimler yükleniyor...
+                                        </div>
+
+                                    <!-- Gezinme butonları -->
+                                        <div *ngIf="selectedImages.length > 0" class="nav-buttons">
+                                            <button (click)="previousImage()"[disabled]="currentImageIndex === 0" class="nav-button">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </button>
+                                            <button (click)="nextImage()" [disabled]="currentImageIndex === selectedImages.length - 1" class="nav-button">
+                                                <i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
+                                        </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="hotelEmail">Email</label></td>
+                                <td><label for="hotelPhone">Telefon</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="hotelEmail" placeholder="example@gmail.com"></td>
+                                <td><input type="number" id="hotelPhone" placeholder="555 555 55 55"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="city">Şehir</label></td>
+                                <td><label for="district">İlçe</label></td> 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="city" id="city" (change)="onCityChange()">
+                                        @for (city of cities; track $index) {
+                                            <option value="{{city.id}}" >{{city.name}}</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="district" id="district">
+                                        @for (district of districts; track $index) {
+                                            <option value="{{district.id}}">{{district.name}}</option>
+                                        }
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="address">Adres</label></td>
+                            </tr>
+                            <tr>
+                                <td><textarea name="address" id="address" placeholder="Detaylı Adresinizi Giriniz"></textarea></td>
+                                <td><button type="submit">Değişikliği Onayla</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="personel">
+            <h2>Kişisel Bilgiler</h2>
+            <hr>
+            <form action="">
+                <table class="table-right">
+                    <tbody>
+                        <tr>
+                            <td><label for="">Ad</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Soyad</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Doğum Tarihi</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">E-Posta</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Telefon</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Değişikliği Onayla</button>
+            </form>
+        </div>
+    </div>

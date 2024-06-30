@@ -27,18 +27,18 @@
                     <div class="general-area">
                         <div class="city">
                             <label for="city">{{"City" | translate}}</label><br>
-                            <select id="city" formControlName="city">
-                                <option value="İstanbul" selected>İstanbul</option>
-                                <option value="Manisa">Manisa</option>
-                                <option value="Aydın">Aydın</option>
+                            <select name="city" id="city" (change)="onCityChange()">
+                                @for (city of cities; track $index) {
+                                    <option value="{{city.id}}" >{{city.name}}</option>
+                                }
                             </select>
                         </div>
                         <div class="district">
                             <label for="district">{{"District" | translate}}</label><br>
-                            <select id="district" formControlName="district">
-                                <option value="İstanbul" selected>İstanbul</option>
-                                <option value="Manisa">Manisa</option>
-                                <option value="Aydın">Aydın</option>
+                            <select name="district" id="district">
+                                @for (district of districts; track $index) {
+                                    <option value="{{district.id}}">{{district.name}}</option>
+                                }
                             </select>
                         </div>
                     </div>

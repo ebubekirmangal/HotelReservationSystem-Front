@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BasicLayoutComponent } from "../../../layout/basic-layout/basic-layout.component";
 import { Router, RouterModule } from '@angular/router';
@@ -8,6 +8,9 @@ import { TimeDisplayComponent } from "../../../shared/time-display/time-display/
 import { BlobOptions } from 'buffer';
 import { UserService } from '../../../features/user/services/user.service';
 import { RegisterUser } from '../../../features/user/models/registerUser';
+import { GetAllCity } from '../../../features/hotel/address/models/getAllCity';
+import { GetAllDistrict } from '../../../features/hotel/address/models/getAllDistrict';
+import { AddressService } from '../../../features/hotel/address/service/address.service';
 
 @Component({
     selector: 'app-manager-login-page',
@@ -17,7 +20,7 @@ import { RegisterUser } from '../../../features/user/models/registerUser';
     imports: [CommonModule, ReactiveFormsModule, BasicLayoutComponent, RouterModule, TranslateModule, TimeDisplayComponent],
     providers:[UserService]
 })
-export class ManagerLoginPageComponent {
+export class ManagerLoginPageComponent implements OnInit {
   registerForm: FormGroup;
   loginForm: FormGroup;
   moveForm: boolean = false;
@@ -26,8 +29,11 @@ export class ManagerLoginPageComponent {
   message:string;
   color:string;
   newUser:RegisterUser;
+  cities:GetAllCity[];
+  districts:GetAllDistrict[];
+  selectedCityId:number;
   
-  constructor(private fb: FormBuilder,private router:Router,private userService:UserService) {
+  constructor(private fb: FormBuilder,private router:Router,private userService:UserService,private addressService:AddressService) {
     this.registerForm = this.fb.group({
       hotelName: ['', Validators.required],
       phone: ['', Validators.required],
@@ -44,6 +50,38 @@ export class ManagerLoginPageComponent {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+  ngOnInit(): void {
+    this.getAllCity();
+  this.getAllDistrictByCityId(9);
+  }
+
+  getAllCity() {
+    this.addressService.getAllCity().subscribe(
+      cities => {
+        this.cities = cities;
+      },
+      error => {
+        console.error('Error loading cities:', error);
+      }
+    );
+  }
+  
+  onCityChange() {
+    this.selectedCityId = Number((event.target as HTMLSelectElement).value);
+    this.getAllDistrictByCityId(this.selectedCityId);
+  }
+  
+  getAllDistrictByCityId(cityId: number) {
+    this.addressService.getAllDistrictByCityId(cityId).subscribe(
+      districts => {
+        this.districts = districts;
+      },
+      error => {
+        console.error('Error loading districts:', error);
+      }
+    );
+  }
+
   toggleMove() {
     this.moveForm = !this.moveForm;
     this.submit = false;
@@ -55,27 +93,41 @@ export class ManagerLoginPageComponent {
     return this.newUser;
   }
   createManager() {
-    this.userService.register(this.createUser()).subscribe(
-      (response)=>{
-    this.submit = true;
-    this.message = "Kayıt başarılı";
-    this.color = "#07ec16";
-    if (this.submit) {
+    if(this.registerForm.value === null){
+      this.submit = !this.submit;
+        this.message = "Lütfen formu doldurunuz";
+        this.color = "red";
+        
+        setTimeout(() => {
+            
+            this.submit = false;
+          }, 3000); 
+        
+    }else{
+      this.userService.register(this.createUser()).subscribe(
+        (response)=>{
+      this.submit = true;
+      this.message = "Kayıt başarılı";
+      this.color = "#07ec16";
+      
       setTimeout(() => {
-        this.submit = false;
-      }, 3000);
-    }
-    },
-  (error)=>{
-    this.submit = true;
-    this.message = "Kayıt işlemi gerçekleşmedi";
-    this.color = "red";
-    if (this.submit) {
+          this.router.navigate(["/managerPage"]);
+          this.submit = false;
+        }, 3000);
+      
+      },
+    (error)=>{
+      this.submit = true;
+      this.message = "Kayıt işlemi gerçekleşmedi";
+      this.color = "red";
+      
       setTimeout(() => {
-        this.submit = false;
-      }, 3000);
+          this.submit = false;
+        }, 3000);
+      
+    })
+      
     }
-  })
     
   }
   checkManager(){
@@ -87,6 +139,7 @@ export class ManagerLoginPageComponent {
     this.color = "#07ec16";
     if (this.submit) {
       setTimeout(() => {
+        this.router.navigate(["/managerPage"]);
         this.submit = false;
       }, 3000); 
     }

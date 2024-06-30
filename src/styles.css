@@ -9,7 +9,7 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     overflow-x:hidden;
-    overflow-y: hidden;
+    overflow-y:hidden;
     height: max-content;
 }
 
@@ -26,6 +26,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     
   }
 
-  .hotelfilter-background {
-  
-  }
