@@ -1,0 +1,50 @@
+
+/* Features */
+.option {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+    border-radius: 11px;
+    padding: 3px 16px;
+    color: white;
+    width: max-content;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline;
+}
+.selected {
+    background-color: #2067e2; /* Seçili olduğunda arka plan rengi */
+    color: white; /* Yazı rengi */
+}
+
+input[type="checkbox"] {
+    display: none; /* Checkbox'u görünmez yap */
+}
+.features{
+    display: flex;
+    gap: 5px;
+}
+/* Images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Resim konteynerinin yüksekliği */
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .navigation-buttons {
+    margin-top: 10px;
+  }

@@ -8,9 +8,9 @@ import { TimeDisplayComponent } from "../../../shared/time-display/time-display/
 import { BlobOptions } from 'buffer';
 import { UserService } from '../../../features/user/services/user.service';
 import { RegisterUser } from '../../../features/user/models/registerUser';
-import { GetAllCity } from '../../../features/hotel/address/models/getAllCity';
-import { GetAllDistrict } from '../../../features/hotel/address/models/getAllDistrict';
-import { AddressService } from '../../../features/hotel/address/service/address.service';
+import { GetAllCity } from '../../../features/address/models/getAllCity';
+import { GetAllDistrict } from '../../../features/address/models/getAllDistrict';
+import { AddressService } from '../../../features/address/service/address.service';
 
 @Component({
     selector: 'app-manager-login-page',

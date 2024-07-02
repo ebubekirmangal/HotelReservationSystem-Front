@@ -3,13 +3,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestro
 import { BasicLayoutComponent } from "../../layout/basic-layout/basic-layout.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { last } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserService } from '../../features/user/services/user.service';
-import { response } from 'express';
-import { error } from 'console';
 import { TimeDisplayComponent } from '../../shared/time-display/time-display/time-display.component';
 import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-login-page',
@@ -80,16 +78,7 @@ loginBtn() {
 
 
 checkUser() {
-  // if(!this.loginForm.valid){
-  //   this.submit = !this.submit;
-  //     this.message = "Giriş işlemi gerçekleşmedi";
-  //     this.color = "red";
-  //     if (this.submit) {
-  //       setTimeout(() => {
-  //         this.submit = false;
-  //       }, 3000); 
-  //     }
-  // }
+  console.log(this.loginForm)
   this.userService.login(this.loginForm.value).subscribe(
     (response) =>{
       this.submit = true;

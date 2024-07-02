@@ -10,6 +10,7 @@
 .content,.secondly-navbar{
     width: 70%;
     border: 2px solid #ff942c;
+    background-color: #fff;
 }
 .content{
     padding: 10px 5px;

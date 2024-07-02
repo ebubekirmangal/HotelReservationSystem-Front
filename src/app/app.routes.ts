@@ -5,7 +5,9 @@ import { ManagerLoginPageComponent } from './routh/manager/login/manager-login-p
 import { ManagerPageComponent } from './routh/manager/basic-layout/manager-page.component';
 import { MyAboutComponent } from './routh/manager/my-about/my-about/my-about.component';
 import { RoomsComponent } from './routh/manager/rooms/rooms.component';
-import { authGuard } from './features/user/guard/auth.guard';
+import { GuestGuard } from './features/user/guard/guest.guard';
+import { ManagerGuard } from './features/user/guard/manager.guard';
+
 
 
 
@@ -27,7 +29,7 @@ export const routes: Routes = [
         path:"manager-login",
         component: ManagerLoginPageComponent
     },
-    { path: 'managerPage', component: ManagerPageComponent,canActivate: [authGuard], children: [
+    { path: 'managerPage', component: ManagerPageComponent, children: [
         { path: 'myAbout', component: MyAboutComponent },
         { path: 'rooms', component: RoomsComponent },
         // { path: 'reservations', component: ReservationsComponent },

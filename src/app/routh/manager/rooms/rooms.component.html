@@ -1,1 +1,32 @@
-<p>rooms works!</p>
+<h3>Oda Ekle</h3>
+<hr>
+<form action="" [formGroup]="roomForm">
+<input type="text" placeholder="Title" formControlName="title"><br>
+<input type="file" (change)="onFileSelected($event)" multiple formControlName="imageData">
+<div *ngIf="base64Images.length">
+    <h3>Selected Images</h3>
+    <div *ngFor="let base64Image of base64Images">
+      <img [src]="'data:image/jpeg;base64,' + base64Image" alt="Selected Image" width="100">
+    </div>
+  </div>
+<br>
+<label for="roomType">Room Type</label> <br>
+<select name="roomType" id="roomType" formControlName="roomType">
+     <option value="">Single</option><!--veri tabanından çekilcek -->
+    <option value="">Double</option>
+    <option value="">King</option>
+</select>
+<br>
+<label for="features">Features</label>
+<div class="features">
+    @for (option of options; track $index) {
+        <div class="option" (click)="toggleOption(option.id)" [class.selected]="selectedOptions.includes(option.id)">
+            <input type="checkbox" [checked]="selectedOptions.includes(option.id)" [formControlName]="option.id.toString()"><!--Featuresı bağlayıp yap-->
+            {{ option.name }}
+        </div>
+    }
+</div>
+<input type="text" placeholder="Daily Price" formControlName="price">
+    </form>
+<h3>Odalar</h3>
+<hr>

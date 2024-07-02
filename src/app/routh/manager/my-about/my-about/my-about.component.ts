@@ -3,10 +3,10 @@ import { ManagerPageComponent } from "../../basic-layout/manager-page.component"
 import { ImageService } from '../../../../features/image/services/image.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AddressService } from '../../../../features/hotel/address/service/address.service';
-import { CityItem } from '../../../../features/hotel/address/models/cityItem';
-import { GetAllCity } from '../../../../features/hotel/address/models/getAllCity';
-import { GetAllDistrict } from '../../../../features/hotel/address/models/getAllDistrict';
+import { AddressService } from '../../../../features/address/service/address.service';
+import { CityItem } from '../../../../features/address/models/cityItem';
+import { GetAllCity } from '../../../../features/address/models/getAllCity';
+import { GetAllDistrict } from '../../../../features/address/models/getAllDistrict';
 
 @Component({
     selector: 'app-my-about',
