@@ -1,0 +1,20 @@
+<app-basic-layout>
+  <div *ngIf="hotel">
+    <h2>{{ hotel.name }}</h2>
+    <p>{{ hotel.address }}</p>  
+    <div class="room-list">
+      <div class="room-item" *ngFor="let room of hotel.room">
+        <div class="room-images">
+          <img *ngFor="let image of room.images" [src]="image" alt="room-images">
+        </div>
+        <h3>{{ room.name }}</h3>
+        <p>{{ room.features }}</p>
+        <span>{{ room.price | currency }}</span>
+        <button (click)="selectRoom(room)">Odayı Seç</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!hotel">
+    <p>Loading...</p>
+  </div>
+</app-basic-layout>

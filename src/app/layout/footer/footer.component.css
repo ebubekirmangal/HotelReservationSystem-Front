@@ -6,13 +6,21 @@ footer{
     width: 100vw;
     height: 80px;
     background-color: #f07417;
-    padding: 15px;
+    padding: 10px;  /*15 idi*/
+    margin-top: 20px; /*ben ekledim*/
     position: fixed;
     bottom: 10px;
     border-top:2px solid #fff ;
     border-bottom:2px solid #fff;
     color: #fff;
 }
+@media (max-width: 768px) { /*ben ekledim*/
+    .footer {
+        height: 40px; /* Mobil cihazlarda footer yüksekliği */
+        padding: 5px; /* Kenar boşluğu ayarlamak için */
+    }
+}
+
 ul{
     display: flex;
     justify-content: center;

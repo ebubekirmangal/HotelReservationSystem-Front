@@ -11,6 +11,7 @@
             <option value="tr">Türkçe</option>
         </select></li>
         <a routerLink="/help-support" class="log"><li id="login">{{"Support" | translate}}</li></a>
+        <a routerLink="/hotels" class="log"><li id="login">{{"Hotels" | translate}}</li></a>
         <a routerLink="/login" class="log"><i class="fa-solid fa-user icon"></i><li id="login">{{"Login" | translate}}</li></a>
     </ul>
     <div class="toggle-btn" (click)="toggleDropdownMenu()">
@@ -30,5 +31,8 @@
   <a routerLink="/login" class="login">
       <li>{{"Login" | translate}}</li>
   </a>
+  <a routerLink="/hotels">
+    <li>{{"Hotels" | translate}}</li>
+</a>
 </div>
 </nav>

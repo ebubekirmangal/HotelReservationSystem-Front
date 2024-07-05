@@ -18,12 +18,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Login sayfası için arkaplan */
 .login-background {
-    background-image: url("/assets/background/3.jpg");
+    background-image: url("/assets/background/hotel-lobby.jpg");
   }
   
   /* Ana sayfa için arkaplan */
   .homepage-background {
-    background-image: url("/assets/background/3.jpg");
+    background-image: url("/assets/background/summer-beach-wallpaper.jpg");
     
   }
 
@@ -34,3 +34,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .help-support-background{
     background-image: url("/assets/background/3.jpg");
   }
+  .hotel-list-background{
+    background-color: orange;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(244, 209, 167); /* Scroll bar rengi */
+    border-radius: 5px; /* Scroll bar kenar yuvarlaması */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Scroll bar arka plan rengi */
+}

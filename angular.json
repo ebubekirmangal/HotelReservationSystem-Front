@@ -87,7 +87,9 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/background",
+              "src/assets/icons"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",

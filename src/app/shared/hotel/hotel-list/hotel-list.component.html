@@ -1,0 +1,29 @@
+<app-basic-layout>
+  <div *ngIf="hotels.length > 0; else noHotels">
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchHotels()" placeholder="Otel ara...">
+    </div>
+    <div class="hotel-list">
+      <div class="hotel-item" *ngFor="let hotel of filteredHotels">
+        <div class="hotel-images">
+          <img *ngFor="let image of hotel.images" [src]="image" alt="hotel-images">
+        </div>
+        <h3>{{ hotel.name }}</h3>
+        <p><strong>Address:</strong> {{ hotel.address }}</p>
+        <div class="hotel-star">
+          <span *ngFor="let star of getStarCount(hotel.star)">★</span>
+        </div>
+        <div class="hotel-features">
+          <div *ngFor="let feature of hotel.features" class="feature-column">
+            <span>{{ feature }}</span>
+          </div>
+          <button (click)="selectRoom(hotel)">Odayı Seç</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noHotels>
+    <p>Hiç otel bulunamadı.</p>
+  </ng-template>
+</app-basic-layout>
+
