@@ -4,50 +4,34 @@
             <div class="form-components" [ngClass]="{'moved': moveForm}">
 @if (moveForm) {
     <form [formGroup]="registerForm" (ngSubmit)="createManager()">
+        <h2 class="form-title-register">{{"Sign Up" | translate}}</h2>
         <div class="form">
-                <div class="form-left">
-                    <label for="hotelName">{{"Hotel Name" | translate}}</label><br>
-                    <input id="hotelName" formControlName="hotelName" type="text" placeholder="{{'Hotel Name' | translate}}"><br>
+            <div class="form-left">
+                <label for="firstName">First Name</label><br>
+                <input type="text" id="firstName" placeholder="First Name" formControlName="firstName"><br>
+                
+                <label for="lastName">Last Name</label><br>
+                <input type="text" id="lastName" placeholder="Last Name" formControlName="lastName"><br>
+                
+                <label for="dateOfBirth">Date of birth</label><br>
+                <input type="date" id="dateOfBirth" formControlName="dateOfBirth"><br>
     
-                    <label for="phone">{{"Phone" | translate}}</label><br>
-                    <input id="phone" formControlName="phone" type="tel" placeholder="(555) 555 55 55"><br>
-    
-                    <label for="email">{{"Email" | translate}}</label><br>
-                    <input id="email" formControlName="email" type="email" placeholder="example@gmail.com"><br>
-    
-                    <label for="password">{{"Password" | translate}}</label><br>
-                    <input id="password" formControlName="password" type="password" placeholder="********"><br>
-    
-                    <label for="confirmPassword">{{"Password Confirm" | translate}}</label><br>
-                    <input id="confirmPassword" formControlName="confirmPassword" type="password"
-                                placeholder="********">
-                </div>
-    
-                <div class="address">
-                    <div class="general-area">
-                        <div class="city">
-                            <label for="city">{{"City" | translate}}</label><br>
-                            <select name="city" id="city" (change)="onCityChange()">
-                                @for (city of cities; track $index) {
-                                    <option value="{{city.id}}" >{{city.name}}</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="district">
-                            <label for="district">{{"District" | translate}}</label><br>
-                            <select name="district" id="district">
-                                @for (district of districts; track $index) {
-                                    <option value="{{district.id}}">{{district.name}}</option>
-                                }
-                            </select>
-                        </div>
-                    </div>
-                            <br>
-                    <label for="address">{{"Address" | translate}}</label><br>
-                    <textarea id="address" formControlName="address"placeholder="{{'Enter your detailed address information' | translate}}.."></textarea><br>
-                    <input type="submit" value="{{'Sign Up' | translate}}">
-                </div>
             </div>
+            <div class="form-right">
+                <label for="email">{{"Email" | translate}}</label><br>
+            <input id="email" formControlName="email" type="email" placeholder="example@gmail.com"><br>
+    
+            <label for="password">{{"Password" | translate}}</label><br>
+            <input id="password" formControlName="password" type="password" placeholder="********"><br>
+    
+            <label for="confirmPassword">{{"Password Confirm" | translate}}</label><br>
+            <input id="confirmPassword" formControlName="passwordConfirm" type="password"
+                                placeholder="********">
+                                <input type="submit" value="{{'Sign Up' | translate}}">
+            </div>
+                
+            </div>
+        
     </form>
     }@else {
 <h2 class="form-title">{{"Sign In" | translate}}</h2>

@@ -176,11 +176,25 @@ button[type="submit"]{
     font-size: 18px;
     color: #666;
   }
-@media(max-width:1040px){
-.tables{
-    flex-direction: column;
-}
-.content,.secondly-navbar{
+@media (max-width:1305px) and  (min-width:1016px) {
+    .content,.secondly-navbar{
     width: 90%;
+    }
 }
+@media (max-width:1015px) and  (min-width:911px) {
+    .content,.secondly-navbar{
+    width: 100%;
+    border-radius: 0;
+    }
+    input,select,textarea{
+        width: 140px;
+    }
 }
+@media (max-width:910px) and  (min-width:500px) {
+    .content,.secondly-navbar{
+    width: 100%;
+    border-radius: 0;
+    }
+}
+
+

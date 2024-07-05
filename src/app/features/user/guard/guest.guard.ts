@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Router, type CanActivateFn } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { inject } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class GuestGuard implements CanActivate {
+export const guestGuard: CanActivateFn = (route, state) => {
+  const userService = inject(UserService);
+  const router = inject(Router);
 
-  constructor(private userService: UserService, private router: Router) {}
-
-  canActivate(): boolean {
-    const userRole = this.userService.getUserRole(); // Auth servisinden kullanıcı rolünü alın
+  if (userService.isGuest()) {
     return true;
+  } else {
+    router.navigate(['/login']);
+    return false;
   }
-}
+};

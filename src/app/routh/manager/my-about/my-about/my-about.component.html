@@ -3,7 +3,27 @@
         <div class="hotel">
             <h2>Otel Bilgileri</h2>
             <hr>
-            <form action="">
+            <div class="image-container">
+                <!-- Resim gösterme alanı -->
+                <div *ngIf="selectedImages.length > 0" class="image-box">
+                    <img [src]="selectedImages[currentImageIndex].url" class="selected-image">
+                </div>
+
+            <!-- Yükleme durumu gösterimi -->
+                <div *ngIf="selectedImages.length === 0 && !loading"class="loading-message">
+                            Resimler yükleniyor...
+                </div>
+
+            <!-- Gezinme butonları -->
+                <div *ngIf="selectedImages.length > 0" class="nav-buttons">
+                    <button (click)="previousImage()"[disabled]="currentImageIndex === 0" class="nav-button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button (click)="nextImage()" [disabled]="currentImageIndex === selectedImages.length - 1" class="nav-button">
+                        <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                </div>
+            <form [formGroup]="hotelForm" (submit)="onSubmit()">
                 <div class="tables">
                     <table class="table-left">
                         <tbody>
@@ -12,12 +32,12 @@
                                 <td><label for="hotelStar">Otel Yıldızı</label></td>
                             </tr>
                             <tr>
-                                <td><input type="text" id="hotelName" placeholder="Example Name"></td>
+                                <td><input type="text" id="hotelName" placeholder="Example Name" formControlName="name"></td>
                                 <td>
-                                    <input type="number" max="5" min="1" id="hotelStar" name="hotelStar"[(ngModel)]="rating" value="{{rating}}">
+                                    <input type="number" max="5" min="1" id="hotelStar" name="hotelStar"[(ngModel)]="defaultStar" value="{{defaultStar}}" formControlName="star">
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     @for (star of stars; track $index) {
-                                            <i class="fa-regular fa-star star-icon"[ngClass]="{'filled': $index < rating}"></i>
+                                            <i class="fa-regular fa-star star-icon"[ngClass]="{'filled': $index < defaultStar}"></i>
                                             }
                                 </td>
                             </tr>
@@ -25,30 +45,14 @@
                                 <td><label for="hotelImg">Otel Resimleri</label>
                                     <br>
                                     <!-- Resim seçme inputu -->
-                                    <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
+                                    <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple formControlName="images">
                                 </td>
                                 <td>
-                                 
-                                        <div class="image-container">
-                                        <!-- Resim gösterme alanı -->
-                                        <div *ngIf="selectedImages.length > 0" class="image-box">
-                                            <img [src]="selectedImages[currentImageIndex].url" class="selected-image">
-                                        </div>
-
-                                    <!-- Yükleme durumu gösterimi -->
-                                        <div *ngIf="selectedImages.length === 0 && !loading"class="loading-message">
-                                                    Resimler yükleniyor...
-                                        </div>
-
-                                    <!-- Gezinme butonları -->
-                                        <div *ngIf="selectedImages.length > 0" class="nav-buttons">
-                                            <button (click)="previousImage()"[disabled]="currentImageIndex === 0" class="nav-button">
-                                                <i class="fa-solid fa-chevron-left"></i>
-                                            </button>
-                                            <button (click)="nextImage()" [disabled]="currentImageIndex === selectedImages.length - 1" class="nav-button">
-                                                <i class="fa-solid fa-chevron-right"></i></button>
-                                        </div>
-                                        </div>
+                                    <label for="">Konaklama Türü</label> <br>
+                                 <select name="" id="">
+                                    <option value="">Otel</option>
+                                    <option value="">Pansiyon</option>
+                                 </select>      
                                 </td>
                             </tr>
                             <tr>
@@ -56,8 +60,8 @@
                                 <td><label for="hotelPhone">Telefon</label></td>
                             </tr>
                             <tr>
-                                <td><input type="text" id="hotelEmail" placeholder="example@gmail.com"></td>
-                                <td><input type="number" id="hotelPhone" placeholder="555 555 55 55"></td>
+                                <td><input type="text" id="hotelEmail" placeholder="example@gmail.com" formControlName="email"></td>
+                                <td><input type="number" id="hotelPhone" placeholder="555 555 55 55" formControlName="phone"></td>
                             </tr>
                             <tr>
                                 <td><label for="city">Şehir</label></td>

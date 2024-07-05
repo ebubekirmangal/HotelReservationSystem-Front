@@ -9,8 +9,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { LocationComponent } from "../location/location.component";
-import { Address } from '../../features/null/models/address';
+
 import { TranslateModule } from '@ngx-translate/core';
+import { Address } from '../../features/address/models/address';
 
 @Component({
     selector: 'app-hotel-filter',

@@ -3,13 +3,17 @@ export interface AddHotel{
 
     name:string;
 
-    address:string;
+    star:number;
 
-    phoneNumber:string;
+    phone:string;
 
     email:string;
 
     addressId:number;
 
-    housingType:string;
+    featureIds:number[];
+
+    imageIds:number[];
+
+    accommodationType:string;
 }

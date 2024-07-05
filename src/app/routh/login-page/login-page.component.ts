@@ -63,6 +63,8 @@ export class LoginPageComponent implements OnInit,OnDestroy {
     this.registerForm = this.fb.group({
       firstName: ["",[Validators.required]],
       lastName:["",[Validators.required]],
+      phone:[""],
+      dateOfBirth:[null],
       email: ["", [Validators.required]],
       password: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
       passwordConfirm: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],

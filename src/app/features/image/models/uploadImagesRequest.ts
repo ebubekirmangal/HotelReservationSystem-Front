@@ -1,4 +1,4 @@
 export interface UploadImagesRequest {
-    roomId: number;
+    hotelId: number;
     imageData: string[];
   }

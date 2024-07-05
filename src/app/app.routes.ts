@@ -5,8 +5,9 @@ import { ManagerLoginPageComponent } from './routh/manager/login/manager-login-p
 import { ManagerPageComponent } from './routh/manager/basic-layout/manager-page.component';
 import { MyAboutComponent } from './routh/manager/my-about/my-about/my-about.component';
 import { RoomsComponent } from './routh/manager/rooms/rooms.component';
-import { GuestGuard } from './features/user/guard/guest.guard';
-import { ManagerGuard } from './features/user/guard/manager.guard';
+import { guestGuard } from './features/user/guard/guest.guard';
+import { managerGuard } from './features/user/guard/manager.guard';
+
 
 
 
@@ -29,7 +30,7 @@ export const routes: Routes = [
         path:"manager-login",
         component: ManagerLoginPageComponent
     },
-    { path: 'managerPage', component: ManagerPageComponent, children: [
+    { path: 'managerPage', component: ManagerPageComponent, children: [//,canActivate:[managerGuard] şimdilik çıkardım işlemlere devam etmek için
         { path: 'myAbout', component: MyAboutComponent },
         { path: 'rooms', component: RoomsComponent },
         // { path: 'reservations', component: ReservationsComponent },

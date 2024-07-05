@@ -2,19 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UploadImagesRequest } from '../models/uploadImagesRequest';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
-baseUrl ="http://localhost:8080/api/v1/images"
+  private readonly apiUrl = `${environment.apiUrl}`;
   constructor(private http: HttpClient) { }
 
-  uploadImages(uploadImagesRequest: UploadImagesRequest): Observable<void> {
-    return this.http.post<void>(`${this.baseUrl}/upload-images`, uploadImagesRequest);
+  uploadImage(uploadImagesRequest: UploadImagesRequest): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/upload-images`, uploadImagesRequest);
   }
 
   getImages(roomId:number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/get-images/?RoomId=${roomId}`);
+    return this.http.get<any[]>(`${this.apiUrl}/get-images/?RoomId=${roomId}`);
   }
 }

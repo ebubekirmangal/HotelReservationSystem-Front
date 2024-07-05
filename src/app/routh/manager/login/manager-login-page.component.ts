@@ -29,20 +29,14 @@ export class ManagerLoginPageComponent implements OnInit {
   message:string;
   color:string;
   newUser:RegisterUser;
-  cities:GetAllCity[];
-  districts:GetAllDistrict[];
-  selectedCityId:number;
-  
   constructor(private fb: FormBuilder,private router:Router,private userService:UserService,private addressService:AddressService) {
     this.registerForm = this.fb.group({
-      hotelName: ['', Validators.required],
-      phone: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      city: ['', Validators.required],
-      district: ['', Validators.required],
-      address: ['', Validators.required],
+      passwordConfirm: ['', Validators.required],
+      dateOfBirth: [null, Validators.required],
       role:["MANAGER"]
     });
     this.loginForm = this.fb.group({
@@ -51,35 +45,7 @@ export class ManagerLoginPageComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getAllCity();
-  this.getAllDistrictByCityId(9);
-  }
-
-  getAllCity() {
-    this.addressService.getAllCity().subscribe(
-      cities => {
-        this.cities = cities;
-      },
-      error => {
-        console.error('Error loading cities:', error);
-      }
-    );
-  }
   
-  onCityChange() {
-    this.selectedCityId = Number((event.target as HTMLSelectElement).value);
-    this.getAllDistrictByCityId(this.selectedCityId);
-  }
-  
-  getAllDistrictByCityId(cityId: number) {
-    this.addressService.getAllDistrictByCityId(cityId).subscribe(
-      districts => {
-        this.districts = districts;
-      },
-      error => {
-        console.error('Error loading districts:', error);
-      }
-    );
   }
 
   toggleMove() {
@@ -87,12 +53,8 @@ export class ManagerLoginPageComponent implements OnInit {
     this.submit = false;
     console.log(this.moveForm)
   }
-  createUser():RegisterUser{
-    this.newUser = {firstName:null,lastName:null,email:this.registerForm.value["email"],password:this.registerForm.value["password"],passwordConfirm:this.registerForm.value["confirmPassword"],role:this.registerForm.value["role"]}
-    console.log(this.newUser);
-    return this.newUser;
-  }
   createManager() {
+    console.log(this.registerForm.value)
     if(this.registerForm.value === null){
       this.submit = !this.submit;
         this.message = "Lütfen formu doldurunuz";
@@ -104,7 +66,7 @@ export class ManagerLoginPageComponent implements OnInit {
           }, 3000); 
         
     }else{
-      this.userService.register(this.createUser()).subscribe(
+      this.userService.register(this.registerForm.value).subscribe(
         (response)=>{
       this.submit = true;
       this.message = "Kayıt başarılı";
