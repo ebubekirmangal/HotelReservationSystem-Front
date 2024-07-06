@@ -1,0 +1,15 @@
+#sss{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 20px;
+}
+ul{
+    list-style: none;
+}
+li{
+    border: 1px solid black;
+    width: 420px;
+    padding: 10px 5px;
+}

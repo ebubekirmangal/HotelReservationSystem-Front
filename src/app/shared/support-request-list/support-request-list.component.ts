@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './support-request-list.component.css'
 })
 export class SupportRequestListComponent implements OnInit{
-supportRequests:SupportRequest[];
+supportRequests:SupportRequest[]=[{userEmail:'1234@gmail.com',subject:'konu',status:false,description:'açıklama'}];
 
 constructor(private supportRequestService:SupportRequestService){}
   ngOnInit(): void {

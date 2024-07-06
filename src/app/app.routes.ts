@@ -12,7 +12,11 @@ import { HotelDetailComponent } from './shared/hotel/hotel-detail/hotel-detail.c
 
 export const routes: Routes = [
     {
+<<<<<<< HEAD
         path: '', redirectTo: '/hotels', pathMatch: 'full' 
+=======
+        path: '', redirectTo: '/faqs', pathMatch: 'full' 
+>>>>>>> 6d547f26eef2bd66c4a3d07221e54a41f8df0d16
     },
   
     {

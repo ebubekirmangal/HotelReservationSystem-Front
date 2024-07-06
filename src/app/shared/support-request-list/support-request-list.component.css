@@ -1,0 +1,26 @@
+ul{
+    list-style: none;
+}
+.message{
+    background-color: #dedede;
+    padding: 0px;
+    width: 350px;
+    border-radius: 10px;
+}
+#email{
+    border-bottom: 1px solid black;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+}
+.info{
+    padding: 5px;
+}
+textarea{
+resize: none;
+height: 50px;
+width: 98%;
+}
+#subject{
+    margin-bottom: 5px;
+}
