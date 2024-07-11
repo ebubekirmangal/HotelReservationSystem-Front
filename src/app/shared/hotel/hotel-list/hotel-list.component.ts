@@ -1,15 +1,19 @@
-import { Component, EventEmitter, Inject, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Renderer2 } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule} from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { BasicLayoutComponent } from '../../../layout/basic-layout/basic-layout.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Hotel } from '../models/hotel.model';
+
 import { HotelService } from '../services/hotel.service';
 
-import { HotelDetailCardComponent } from "../hotel-detail-card/hotel-detail-card.component";
 import { Router } from '@angular/router';
+import { CardComponent } from '../../card/card.component';
+import { ListHotelResponse } from '../models/hotel.model';
+import { SearchBarComponent } from '../../search-bar/search-bar.component';
+import { StarPipe } from './pipe/star.pipe';
+
 
 
 @Component({
@@ -17,64 +21,43 @@ import { Router } from '@angular/router';
     standalone: true,
     templateUrl: './hotel-list.component.html',
     styleUrls: ['./hotel-list.component.css'],
-    imports: [CommonModule, TranslateModule, BasicLayoutComponent, FormsModule, HttpClientModule, HotelDetailCardComponent]
+    imports: [CommonModule, TranslateModule, BasicLayoutComponent, FormsModule, HttpClientModule,CardComponent,SearchBarComponent,StarPipe]
 })
 export class HotelListComponent implements OnInit {
-  hotels: Hotel[] = [];
-  filteredHotels: Hotel[] = [];
-  searchTerm: string = '';
+  hotels: ListHotelResponse[] = [];
+  filteredHotels: ListHotelResponse[] = [];
+  searchText: string = '';
+  errorMessage: string | null = null;
+  @Input() hotelId!: number;
 
   constructor(
-    private renderer: Renderer2,
     private hotelService: HotelService,
-    @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.renderer.addClass(document.body, 'hotel-list-background');
-    }
-    this.hotelService.Hotel().subscribe(data => {
-      this.hotels = data;
-      this.filteredHotels = data;
+    this.hotelService.getAllHotels().subscribe({
+      next: (data: ListHotelResponse[]) => {
+        this.hotels = data;
+        this.filteredHotels = data; // Initialize the filtered list
+        console.log(this.filteredHotels); // Verileri konsola yazdır
+      },
+      error: (error) => {
+        this.errorMessage = 'Otelleri getirirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+        console.error('Error fetching hotels:', error);
+      }
     });
-
-    if (isPlatformBrowser(this.platformId)) {
-      this.startImageSlider();
-    }
   }
 
-  ngOnDestroy(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.renderer.removeClass(document.body, 'hotel-list-background');
-    }
-  }
-
-  selectRoom(hotel: Hotel): void {
+  selectRoom(hotel: ListHotelResponse): void {
     this.router.navigate(['/hotel', hotel.id]);
   }
 
-  startImageSlider(): void {
-    setInterval(() => {
-      const sliders = document.querySelectorAll('.image-slider');
-      sliders.forEach(slider => {
-        const images = slider.querySelectorAll('img');
-        let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
-      });
-    }, 3000);
-  }
-
-  searchHotels(): void {
+  onSearch(searchText: string): void {
     this.filteredHotels = this.hotels.filter(hotel =>
-      hotel.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      hotel.name.toLowerCase().includes(searchText.toLowerCase())
     );
   }
 
-  getStarCount(rating: number): number[] {
-    return Array(rating).fill(0);
-  }
+ 
 }

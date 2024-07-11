@@ -1,0 +1,27 @@
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .search-bar input[type="text"] {
+    width: calc(100% - 80px); /* Adjusted width for button and padding */
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input[type="text"]:focus {
+    outline: none;
+    border-color: #2a9d8f;
+  }
+  
+  .search-bar input[type="text"]::placeholder {
+    color: #bbb;
+  }

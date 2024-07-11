@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { BasicLayoutComponent } from './layout/basic-layout/basic-layout.component';
 import { HotelListComponent } from "./shared/hotel/hotel-list/hotel-list.component";
 import { HotelDetailComponent } from "./shared/hotel/hotel-detail/hotel-detail.component";
-import { HotelDetailCardComponent } from "./shared/hotel/hotel-detail-card/hotel-detail-card.component";
+
 
 
 @Component({
@@ -12,7 +12,7 @@ import { HotelDetailCardComponent } from "./shared/hotel/hotel-detail-card/hotel
     standalone: true, //http ve basic layout'u sonradan ekledim
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, HttpClientModule, BasicLayoutComponent, HotelListComponent, HotelDetailComponent, HotelDetailCardComponent]
+    imports: [RouterOutlet, HttpClientModule, BasicLayoutComponent, HotelListComponent, HotelDetailComponent]
 })
 export class AppComponent{
   title = 'Looking for Hotel';

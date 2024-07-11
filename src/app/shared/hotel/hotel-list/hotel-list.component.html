@@ -1,29 +1,31 @@
 <app-basic-layout>
-  <div *ngIf="hotels.length > 0; else noHotels">
-    <div class="search-bar">
-      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="searchHotels()" placeholder="Otel ara...">
-    </div>
+  <div class="container">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
     <div class="hotel-list">
-      <div class="hotel-item" *ngFor="let hotel of filteredHotels">
-        <div class="hotel-images">
-          <img *ngFor="let image of hotel.images" [src]="image" alt="hotel-images">
-        </div>
-        <h3>{{ hotel.name }}</h3>
-        <p><strong>Address:</strong> {{ hotel.address }}</p>
-        <div class="hotel-star">
-          <span *ngFor="let star of getStarCount(hotel.star)">★</span>
-        </div>
+      <app-card *ngFor="let hotel of filteredHotels"
+                [imageSrc]="'assets/images/hotel-a1.jpg'"
+                [imageAlt]="hotel.name"
+                [title]="hotel.name"
+                [description]="hotel.addressDescription + ' - ' + (hotel.star | star)"
+
+                (buttonClick)="selectRoom(hotel)">
+             
+                
         <div class="hotel-features">
           <div *ngFor="let feature of hotel.features" class="feature-column">
             <span>{{ feature }}</span>
           </div>
-          <button (click)="selectRoom(hotel)">Odayı Seç</button>
+       
+        <button type="button" class="btn btn-primary" (click)="selectRoom(hotel)">Choose Room</button>
         </div>
-      </div>
+      </app-card>
+    </div>
+    <div *ngIf="filteredHotels.length === 0">
+      <p>Hiç otel bulunamadı.</p>
+    </div>
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
     </div>
   </div>
-  <ng-template #noHotels>
-    <p>Hiç otel bulunamadı.</p>
-  </ng-template>
 </app-basic-layout>
 

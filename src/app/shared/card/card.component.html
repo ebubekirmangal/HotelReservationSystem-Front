@@ -1,0 +1,8 @@
+<div class="card">
+  <img [src]="imageSrc" class="card-image" [alt]="imageAlt" [style.height.px]="imageHeight" />
+  <div class="card-content">
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="card-description">{{ description }}</p>
+    <button type="button" (click)="onButtonClick()" class="card-button">Oda Seç</button>
+  </div>
+</div>

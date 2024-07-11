@@ -1,52 +1,69 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasicLayoutComponent } from '../../../layout/basic-layout/basic-layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { HotelListComponent } from "../hotel-list/hotel-list.component";
-import { Hotel, Room } from '../models/hotel.model';
-import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotel.service';
-
-
+import { CardComponent } from '../../card/card.component';
+import { GetByIdHotelResponse} from '../models/get-by-id-hotel-response.model';
+import { RoomService } from '../services/room.service';
+import { GetAllRoomByHotelIdResponse } from '../models/room.model';
+import { RoomListComponent } from "../../room/room-list/room-list.component";
 
 @Component({
-    selector: 'app-hotel-detail',
-    standalone: true,
-    templateUrl: './hotel-detail.component.html',
-    styleUrls: ['./hotel-detail.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [CommonModule, BasicLayoutComponent, HttpClientModule, TranslateModule, FormsModule, HotelListComponent]
+  selector: 'app-hotel-detail',
+  standalone: true,
+  templateUrl: './hotel-detail.component.html',
+  styleUrls: ['./hotel-detail.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
+  imports: [CommonModule, BasicLayoutComponent, HttpClientModule, TranslateModule, FormsModule, CardComponent, RoomListComponent]
 })
 export class HotelDetailComponent implements OnInit {
-  hotel: Hotel | undefined;
+
+  @Input() hotelId!: number;
+  hotel!: GetByIdHotelResponse;
+ 
+
+  
 
   constructor(
     private route: ActivatedRoute,
-    private hotelService: HotelService
+    private hotelService: HotelService,
+    
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.getHotelDetail(id);
-  }
-
-  getHotelDetail(id: number): void {
-    this.hotelService.getHotelById(id).subscribe({
-      next: (data) => {
+    this.hotelId = +this.route.snapshot.paramMap.get('hotelId')!;
+    this.hotelService.getHotelById(this.hotelId).subscribe(
+      (data: GetByIdHotelResponse) => {
         this.hotel = data;
       },
-      error: (error) => {
-        console.error('Error fetching hotel detail:', error);
+      (error) => {
+        console.error('Error fetching hotel details:', error);
       }
-    });
+    );
   }
 
-  selectRoom(room: Room): void {
-    // Navigate to booking or room detail page with the selected room information
-    console.log('Selected room:', room);
+  loadHotel(): void {
+    this.hotelService.getHotelById(this.hotelId).subscribe(
+      (data: GetByIdHotelResponse) => {
+        this.hotel = data;
+      },
+      (error) => {
+        console.error('Error fetching hotel:', error);
+      }
+    );
+  }
+
+
+
+  selectRoom(roomId: number): void {
+    this.router.navigate(['/hotel', this.hotelId, 'room', roomId]); // Oda seçme sayfasına yönlendirme
   }
 }
