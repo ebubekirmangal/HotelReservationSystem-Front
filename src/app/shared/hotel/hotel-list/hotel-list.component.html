@@ -7,17 +7,9 @@
                 [imageAlt]="hotel.name"
                 [title]="hotel.name"
                 [description]="hotel.addressDescription + ' - ' + (hotel.star | star)"
-
+                [features]="hotel.featureNames"
                 (buttonClick)="selectRoom(hotel)">
-             
-                
-        <div class="hotel-features">
-          <div *ngFor="let feature of hotel.features" class="feature-column">
-            <span>{{ feature }}</span>
-          </div>
-       
-        <button type="button" class="btn btn-primary" (click)="selectRoom(hotel)">Choose Room</button>
-        </div>
+                <app-button variant="primary" (clickButton)="selectRoom(hotel)">Oda Seç</app-button>
       </app-card>
     </div>
     <div *ngIf="filteredHotels.length === 0">
@@ -28,4 +20,3 @@
     </div>
   </div>
 </app-basic-layout>
-

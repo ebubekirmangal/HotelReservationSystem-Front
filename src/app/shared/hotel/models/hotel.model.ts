@@ -3,14 +3,14 @@
 
 
 export interface ListHotelResponse {
-[x: string]: any;
+
     id:number;
     name:string;
     userId:number;
     addressDescription:string;
      star:number;
     images:string[];
-    features:string[];
+    featureNames:string[];
    
     
 

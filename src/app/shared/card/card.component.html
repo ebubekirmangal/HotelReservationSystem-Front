@@ -1,8 +1,18 @@
+<!-- app-card.component.html -->
+
 <div class="card">
-  <img [src]="imageSrc" class="card-image" [alt]="imageAlt" [style.height.px]="imageHeight" />
+  <div class="card-image">
+    <img [src]="imageSrc" [alt]="imageAlt">
+  </div>
   <div class="card-content">
-    <h3 class="card-title">{{ title }}</h3>
+    <h2 class="card-title">{{ title }}</h2>
     <p class="card-description">{{ description }}</p>
-    <button type="button" (click)="onButtonClick()" class="card-button">Oda Seç</button>
+    <div class="card-features" *ngIf="features && features.length > 0">
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li *ngFor="let feature of features">{{ feature }}</li>
+      </ul>
+    </div>
+    <app-button variant="primary" (clickButton)="buttonClick.emit()">Oda Seç</app-button>
   </div>
 </div>

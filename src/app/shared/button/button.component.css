@@ -1,0 +1,23 @@
+
+
+.button {
+  display: inline-block;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+}
+
+.btn-primary {
+  background-color: #2a9d8f;
+  color: white;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #21867a;
+}
+
+/* Add styles for other variants as needed */

@@ -1,5 +1,5 @@
 .card {
-  width: 300px; /* Kart genişliği */
+  width: 400px; /* Kart genişliği artırıldı */
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
@@ -15,7 +15,7 @@
 }
 
 .card-image {
-  height: 200px; /* Kartın resim alanının yüksekliği */
+  height: 300px; /* Kartın resim alanının yüksekliği artırıldı */
   overflow: hidden;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .card-content {
-  padding: 15px;
+  padding: 20px; /* İçerik alanının paddingi artırıldı */
   text-align: center;
 }
 
 .card-title {
   margin: 10px 0;
-  font-size: 1.5em;
+  font-size: 1.8em; /* Başlık boyutu artırıldı */
   color: #333;
 }
 
@@ -43,16 +43,19 @@
   color: #666;
 }
 
-.card-button {
-  background-color: #2a9d8f;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.card-features {
+  margin: 10px 0;
+  color: #666;
+  text-align: left;
 }
 
-.card-button:hover {
-  background-color: #21867a;
+.card-features ul {
+  list-style: none;
+  padding: 0;
 }
+
+.card-features li {
+  margin-bottom: 5px;
+}
+
+

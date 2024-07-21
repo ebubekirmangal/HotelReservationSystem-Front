@@ -13,6 +13,7 @@ import { CardComponent } from '../../card/card.component';
 import { ListHotelResponse } from '../models/hotel.model';
 import { SearchBarComponent } from '../../search-bar/search-bar.component';
 import { StarPipe } from './pipe/star.pipe';
+import { ButtonComponent } from '../../button/button.component';
 
 
 
@@ -21,7 +22,7 @@ import { StarPipe } from './pipe/star.pipe';
     standalone: true,
     templateUrl: './hotel-list.component.html',
     styleUrls: ['./hotel-list.component.css'],
-    imports: [CommonModule, TranslateModule, BasicLayoutComponent, FormsModule, HttpClientModule,CardComponent,SearchBarComponent,StarPipe]
+    imports: [CommonModule, TranslateModule, BasicLayoutComponent, FormsModule, HttpClientModule,CardComponent,SearchBarComponent,StarPipe,ButtonComponent]
 })
 export class HotelListComponent implements OnInit {
   hotels: ListHotelResponse[] = [];
