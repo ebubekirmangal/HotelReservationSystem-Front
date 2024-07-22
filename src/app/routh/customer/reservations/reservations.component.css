@@ -1,0 +1,93 @@
+.reservation-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .future-reservations, .past-reservations {
+    margin-bottom: 20px;
+  }
+  
+  .future-reservations h3, .past-reservations-button {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .no-reservation {
+    display: flex;
+    align-items: center;
+  }
+  
+  .no-reservation input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .no-reservation label {
+    color: #666;
+  }
+  
+  .search-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .past-reservations-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .reservation-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .reservation-header {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .reservation-image img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .reservation-info h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .reservation-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .reservation-footer {
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .reservation-footer p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .reservation-footer span {
+    font-weight: bold;
+    color: #333;
+  }

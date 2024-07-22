@@ -3,18 +3,18 @@
         <div class="hotel">
             <h2>Otel Bilgileri</h2>
             <hr>
-            <div class="image-container">
-                <!-- Resim gösterme alanı -->
+            <!-- <div class="image-container">
+          
                 <div *ngIf="selectedImages.length > 0" class="image-box">
                     <img [src]="selectedImages[currentImageIndex].url" class="selected-image">
                 </div>
 
-            <!-- Yükleme durumu gösterimi -->
+     
                 <div *ngIf="selectedImages.length === 0 && !loading"class="loading-message">
                             Resimler yükleniyor...
                 </div>
 
-            <!-- Gezinme butonları -->
+          
                 <div *ngIf="selectedImages.length > 0" class="nav-buttons">
                     <button (click)="previousImage()"[disabled]="currentImageIndex === 0" class="nav-button">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -22,7 +22,7 @@
                     <button (click)="nextImage()" [disabled]="currentImageIndex === selectedImages.length - 1" class="nav-button">
                         <i class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                </div>
+                </div> -->
             <form [formGroup]="hotelForm" (submit)="onSubmit()">
                 <div class="tables">
                     <table class="table-left">
@@ -45,7 +45,7 @@
                                 <td><label for="hotelImg">Otel Resimleri</label>
                                     <br>
                                     <!-- Resim seçme inputu -->
-                                    <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple formControlName="images">
+                                    resim seçme
                                 </td>
                                 <td>
                                     <label for="">Konaklama Türü</label> <br>

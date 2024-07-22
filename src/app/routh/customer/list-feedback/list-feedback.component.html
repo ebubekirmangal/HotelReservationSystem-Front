@@ -1,0 +1,19 @@
+<app-basic-layout>
+    <h2>Feedback List</h2>
+    <a routerLink="/add-feedback">Add Feedback</a> 
+    <div class="list">
+       @for (feedback of feedbacks; track $index) {
+          <div class="feedback-reply">
+             <app-feedback 
+          [title]="feedback.title"
+          [email]="feedback.email"
+          [content]="feedback.content"
+          [sentTime]="feedback.sentTime | date:'dd/MM/yyyy'"
+        ></app-feedback>
+        <app-reply [feedbackId]="feedback.id"></app-reply>
+          </div>
+         }
+    </div> 
+ </app-basic-layout>
+ 
+ 

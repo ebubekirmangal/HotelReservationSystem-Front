@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-image">
+      <img [src]="imageSrc" [alt]="imageAlt">
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <div class="card-features" ngIf="features && features.length > 0">
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li *ngClass="let feature of features">{{ feature }}</li>
+        </ul>
+      </div>
+      <app-button variant="primary" (clickButton)="buttonClick.emit()">Oda Seç</app-button>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="room-list">
+    <div *ngFor="let room of rooms" class="room-card">
+      <app-card>
+        <h3>{{ room.title }}</h3>
+        <p><strong>Tip:</strong> {{ room.roomType }}</p>
+        <p><strong>Kapasite:</strong> {{ room.capacity }}</p>
+        <p><strong>Fiyat:</strong> {{ room.price | currency }}</p>
+        <div class="room-features">
+          <h4>Özellikler:</h4>
+          <ul>
+            <li *ngFor="let feature of room.featureNames">{{ feature }}</li> 
+          </ul>
+        </div>
+        <div class="room-images">
+          <img *ngFor="let imageId of room.imageIds" [src]="getImageUrl(imageId)" alt="Room Image">
+        </div>
+      </app-card>
+    </div>
+  </div>

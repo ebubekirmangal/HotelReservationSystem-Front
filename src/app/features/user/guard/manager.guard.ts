@@ -9,7 +9,7 @@ export const managerGuard: CanActivateFn = (route, state) => {
   if (userService.isManager()) {
     return true;
   } else {
-    router.navigate(['/login']);
+    router.navigate(['/forbidden']);
     return false;
   }
 };

@@ -59,11 +59,11 @@ convertFilesToBase64(): void {
   
 onSubmit(): void {
   const uploadImagesRequest: UploadImagesRequest = {
-    roomId: this.roomId,
+    hotelId: this.roomId,
     imageData: this.base64Images
   };
 
-  this.imageService.uploadImages(uploadImagesRequest).subscribe(() => {
+  this.imageService.uploadImage(uploadImagesRequest).subscribe(() => {
     console.log('Images uploaded successfully');
     this.loadImages(); // Resimleri yükledikten sonra güncellemek için
   });

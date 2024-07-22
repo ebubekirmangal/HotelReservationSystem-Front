@@ -19,7 +19,7 @@
             </div>
             <div class="form-right">
                 <label for="email">{{"Email" | translate}}</label><br>
-            <input id="email" formControlName="email" type="email" placeholder="example@gmail.com"><br>
+            <input id="email" formControlName="userEmail" type="email" placeholder="example@gmail.com"><br>
     
             <label for="password">{{"Password" | translate}}</label><br>
             <input id="password" formControlName="password" type="password" placeholder="********"><br>
@@ -41,11 +41,11 @@
             <tbody>
                 <tr>
                     <td><label for="email-login">{{"Email" | translate}}</label></td>
-                    <td><input id="email-login" type="text" placeholder="example@gmail.com"></td>
+                    <td><input id="email-login" type="text" placeholder="example@gmail.com" formControlName="userEmail"></td>
                 </tr>
                 <tr>
                     <td><label for="password-login">{{"Password" | translate}}</label></td>
-                    <td><input id="password-login" type="password" placeholder="********"></td>
+                    <td><input id="password-login" type="password" placeholder="********" formControlName="password"></td>
                 </tr>
                 <tr>
                     <td></td>

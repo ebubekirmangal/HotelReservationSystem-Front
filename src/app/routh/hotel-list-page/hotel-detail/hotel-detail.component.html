@@ -1,0 +1,21 @@
+<app-basic-layout>
+    <div *ngIf="hotel; else noHotel">
+      <h1>{{ hotel.name }}</h1>
+      <p>{{ hotel.addressDescription }}</p>
+  
+  
+      <div class="room-list">
+        <app-card *ngFor="let room of rooms"
+                  [imageSrc]="'assets/images/room-a1.jpg'" 
+                  [imageAlt]="room.title"
+                  [title]="room.title"
+                  [description]="'Tip: ' + room.roomType + ', Kapasite: ' + room.capacity + ', Fiyat: ' + (room.price | currency)"
+                  [features]="room.featureNames">
+                  <app-button variant="primary" (clickButton)="selectRoom(room)">Odayı Seç</app-button>
+        </app-card>
+      </div>
+    </div>
+    <ng-template #noHotel>
+      <p>Otel bilgileri bulunamadı.</p>
+    </ng-template>
+  </app-basic-layout>

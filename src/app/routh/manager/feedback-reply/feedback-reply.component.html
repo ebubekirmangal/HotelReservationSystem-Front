@@ -1,0 +1,14 @@
+<div class="main">
+    @for (feedback of feedbacks; track $index;) {
+      <div class="container">
+        <app-feedback 
+        [title]="feedback.title"
+        [email]="feedback.email"
+        [content]="feedback.content"
+        [sentTime]="feedback.sentTime | date:'dd/MM/yyyy'"
+      ></app-feedback>
+      <app-reply [feedbackId]="feedback.id"></app-reply>
+      </div>
+       }       
+  </div>
+  

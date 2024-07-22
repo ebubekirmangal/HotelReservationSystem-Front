@@ -19,6 +19,9 @@ import { forkJoin } from 'rxjs';
     imports: [ManagerPageComponent,CommonModule,FormsModule,ReactiveFormsModule]
 })
 export class MyAboutComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
   defaultStar: number = 1;
   stars: number[] = [1, 2, 3, 4, 5];
   selectedImages: { url: string }[] = [];
@@ -67,30 +70,30 @@ OnSubmit(){
     districtName: this.hotelForm.get('districtName').value,
     generalAddress: this.hotelForm.get('generalAddress').value 
 }
-this.addressService.createAddress(addressData).subscribe(address => {
-  this.addressId = address.id;
-  this.createFeatures();
-});
+// this.addressService.createAddress().subscribe(response => {
+//   this.addressId = response.id;
+//   this.createFeatures();
+// });
 }
 
 createFeatures() {
-  const featureData = this.hotelForm.get('features').value.split(',');
-  const featureObservables = featureData.map(feature => this.featureService.createFeature({ name: feature }));
+  // const featureData = this.hotelForm.get('features').value.split(',');
+  // const featureObservables = featureData.map(feature => this.featureService.createFeature({ name: feature }));
   
-  forkJoin(featureObservables).subscribe(features => {
-    this.featureIds = features.map(f => f.id);
-    this.uploadImages();
-  });
+  // forkJoin(featureObservables).subscribe(features => {
+  //   this.featureIds = features.map(f => f.id);
+  //   this.uploadImages();
+  // });
 }
 
 uploadImages() {
-  const imageFiles = this.hotelForm.get('images').value;
-  const imageObservables = Array.from(imageFiles).map(image => this.imageService.uploadImage(image));
+  // const imageFiles = this.hotelForm.get('images').value;
+  // const imageObservables = Array.from(imageFiles).map(image => this.imageService.uploadImage(image));
   
-  forkJoin(imageObservables).subscribe(images => {
-    this.imageIds = images.map(img => img.id);
-    this.createHotel();
-  });
+  // forkJoin(imageObservables).subscribe(images => {
+  //   this.imageIds = images.map(img => img.id);
+  //   this.createHotel();
+  // });
 }
 
 createHotel() {
@@ -102,12 +105,13 @@ createHotel() {
     phone: this.hotelForm.get('phone').value,
     addressId: this.addressId,
     featureIds: this.featureIds,
-    imageIds: this.imageIds
+    imageIds: this.imageIds,
+    userId:[0]
   };
 
-  this.hotelService.createHotel(hotelData).subscribe(response => {
-    console.log('Hotel created successfully!', response);
-  });
+  // this.hotelService.createHotel(hotelData).subscribe(response => {
+  //   console.log('Hotel created successfully!', response);
+  // });
 }
 
 //city and distric

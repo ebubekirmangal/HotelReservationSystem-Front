@@ -1,0 +1,57 @@
+<div class="reservation-container">
+    <div class="future-reservations">
+      <h3>Gelecek Tarihli Rezervasyonlarım</h3>
+      <div *ngIf="futureReservations.length === 0" class="no-reservation">
+        <input type="radio" checked>
+        <label>Satın alınmış otel rezervasyonunuz bulunmamaktadır.</label>
+      </div>
+      <div *ngFor="let reservation of futureReservations" class="reservation-card">
+        <div class="reservation-header">
+          <div class="reservation-image">
+            <img src="/assets/room/suit-otel.jpg" alt="Hotel Image">
+          </div>
+          <div class="reservation-info">
+            <h4>Oda {{ reservation.roomType }}, {{ reservation.location }}</h4>
+            <p>{{ reservation.checkInDate }} - {{ reservation.checkOutDate }}</p>
+            <p>{{ reservation.adults }} Yetişkin</p>
+            <p>{{ reservation.nights }} gece</p>
+            <p>{{ reservation.roomType }}</p>
+            <p>{{ reservation.boardType }}</p>
+            <p>Rezervasyon No: {{ reservation.reservationNo }}</p>
+            <p>İşlem Kodu: {{ reservation.transactionCode }}</p>
+          </div>
+        </div>
+        <div class="reservation-footer">
+          <p>{{ reservation.guestNames }}</p>
+          <p>Toplam Tutar: <span>{{ reservation.totalAmount }} TL</span></p>
+        </div>
+      </div>
+    </div>
+  
+    <button class="search-button">Otel Ara</button>
+  
+    <div class="past-reservations">
+      <button class="past-reservations-button">Geçmiş Tarihli Rezervasyonlarım</button>
+      <div *ngFor="let reservation of pastReservations" class="reservation-card">
+        <div class="reservation-header">
+          <div class="reservation-image">
+            <img src="/assets/room/standart-twin1.jpg" alt="Hotel Image">
+          </div>
+          <div class="reservation-info">
+            <h4>Oda {{ reservation.roomType }}, {{ reservation.location }}</h4>
+            <p>{{ reservation.checkInDate }} - {{ reservation.checkOutDate }}</p>
+            <p>{{ reservation.adults }} Yetişkin</p>
+            <p>{{ reservation.nights }} gece</p>
+            <p>{{ reservation.roomType }}</p>
+            <p>{{ reservation.boardType }}</p>
+            <p>Rezervasyon No: {{ reservation.reservationNo }}</p>
+            <p>İşlem Kodu: {{ reservation.transactionCode }}</p>
+          </div>
+        </div>
+        <div class="reservation-footer">
+          <p>{{ reservation.guestNames }}</p>
+          <p>Toplam Tutar: <span>{{ reservation.totalAmount }} TL</span></p>
+        </div>
+      </div>
+    </div>
+  </div>

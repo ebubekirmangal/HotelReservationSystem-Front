@@ -5,13 +5,11 @@ import { ManagerLoginPageComponent } from './routh/manager/login/manager-login-p
 import { ManagerPageComponent } from './routh/manager/basic-layout/manager-page.component';
 import { MyAboutComponent } from './routh/manager/my-about/my-about/my-about.component';
 import { RoomsComponent } from './routh/manager/rooms/rooms.component';
-import { guestGuard } from './features/user/guard/guest.guard';
-import { managerGuard } from './features/user/guard/manager.guard';
-
-
-
-
-
+import { ListFeedbackComponent } from './routh/customer/list-feedback/list-feedback.component';
+import { FeedbackFormComponent } from './routh/customer/feedback-form/feedback-form.component';
+import { FeedbackReplyComponent } from './routh/manager/feedback-reply/feedback-reply.component';
+import { HotelListComponent } from './routh/hotel-list-page/hotel-list/hotel-list.component';
+import { HotelDetailComponent } from './routh/hotel-list-page/hotel-detail/hotel-detail.component';
 
 
 export const routes: Routes = [
@@ -30,13 +28,30 @@ export const routes: Routes = [
         path:"manager-login",
         component: ManagerLoginPageComponent
     },
-    { path: 'managerPage', component: ManagerPageComponent, children: [//,canActivate:[managerGuard] şimdilik çıkardım işlemlere devam etmek için
-        { path: 'myAbout', component: MyAboutComponent },
+    { path: 'manager-panel', component: ManagerPageComponent, children: [//,canActivate:[managerGuard] şimdilik çıkardım işlemlere devam etmek için
+        { path: 'my-about', component: MyAboutComponent },
         { path: 'rooms', component: RoomsComponent },
         // { path: 'reservations', component: ReservationsComponent },
-        // { path: 'feedbacks', component: FeedbacksComponent },
+        { path: 'feedback-reply', component: FeedbackReplyComponent },
         // { path: 'generalAnalysis', component: GeneralAnalysisComponent },
-        { path: '', redirectTo: 'myAbout', pathMatch: 'full' }
-      ]}
+        { path: '', redirectTo: 'my-about', pathMatch: 'full' }
+      ]},
+      {
+          path:"list-feedback",
+          component: ListFeedbackComponent
+      },
+      {
+          path:"add-feedback",
+          component: FeedbackFormComponent
+      },
+      {
+        path:"hotels", 
+        component: HotelListComponent
+      },
+      {
+        path:"hotel/:id",
+        component: HotelDetailComponent
+      }
+      
 
 ];

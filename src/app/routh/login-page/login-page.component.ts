@@ -55,7 +55,7 @@ export class LoginPageComponent implements OnInit,OnDestroy {
   }
   createLoginForm() {
     this.loginForm = this.fb.group({
-      email: ["", [Validators.required]],
+      userEmail: ["", [Validators.required]],
       password: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(25)]]
     })
   }
@@ -65,7 +65,7 @@ export class LoginPageComponent implements OnInit,OnDestroy {
       lastName:["",[Validators.required]],
       phone:[""],
       dateOfBirth:[null],
-      email: ["", [Validators.required]],
+      userEmail: ["", [Validators.required]],
       password: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
       passwordConfirm: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(25)]],
       role:["GUEST"]
@@ -80,9 +80,12 @@ loginBtn() {
 
 
 checkUser() {
-  console.log(this.loginForm)
+  const role:string = this.loginForm.value["role"];
   this.userService.login(this.loginForm.value).subscribe(
     (response) =>{
+      this.userService.saveUserId(response.userId);
+      this.userService.saveEmail(this.loginForm.value["email"]);
+      this.userService.saveRole(role);
       this.submit = true;
       this.message = "Giriş işlemi başarılı şekilde gerçekleşti.";
       this.color = "#07ec16";
@@ -116,8 +119,13 @@ createUser() {
         }, 3000); 
       }
   }
+  const role:string = this.registerForm.value["role"];
 this.userService.register(this.registerForm.value).subscribe(
   (response) =>{
+    this.userService.saveUserId(response.userId.toString());
+    this.userService.saveEmail(this.registerForm.value["email"]);
+    this.userService.saveRole(role);
+
     this.submit = true;
     this.message = "Kayıt başarılı şekilde gerçekleşti.";
     this.router.navigate(["/home"])

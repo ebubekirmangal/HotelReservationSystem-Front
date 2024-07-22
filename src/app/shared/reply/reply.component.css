@@ -1,0 +1,32 @@
+.display{
+    display: none;
+}
+.display.active{
+    display: block;
+}
+.reply-container-zero,.reply-container-one{
+    background-color: rgb(246, 243, 243);
+    box-shadow: 0px 0px 5px #046d0b;
+    padding: 10px;
+    border-radius:15px;
+    color: #046d0b;
+    width: 250px;
+}
+.reply-container-zero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+.reply-title{
+    font-size: 24px;
+}
+.reply-content{
+    margin-top: 4px;
+    background-color: #fff;
+    padding: 5px;
+    height: 65px;
+    border-radius: 15px;
+    overflow-y: auto;
+    overflow-x: hidden
+}

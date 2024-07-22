@@ -46,4 +46,11 @@ export class NavigationComponent implements OnChanges{
     }
     this.selectedLanguage = lang;
   }
+  toggleDropdownMenu(): void {
+    const dropdownMenu = document.querySelector('.dropdown-menu') as HTMLElement;
+    const toggleBtnIcon = document.querySelector('.toggle-btn i') as HTMLElement;
+    dropdownMenu.classList.toggle('open');
+    const isOpen = dropdownMenu.classList.contains('open');
+    toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  }
  }

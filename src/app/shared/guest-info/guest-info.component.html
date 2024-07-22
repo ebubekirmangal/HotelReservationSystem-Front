@@ -1,0 +1,32 @@
+<div class="guest-info">
+    <h3 class="title">MİSAFİR BİLGİLERİ</h3>
+    <form action="http://localhost:8080/api/v1/creditCards" [formGroup]="guestForm" (submit)="createGuest()">
+        <div class="form-group">
+            <label for="email">Email(Rezervasyon Sahibi)</label>
+            <input type="email" placeholder="Email Adresiniz" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label>Cep Telefonu</label>
+            <input type="tel" placeholder="5**" formControlName="phone">
+          </div>
+          <div class="form-group">
+            <label>Ad (1. Yetişkin)</label>
+            <input type="text" placeholder="Adınız" formControlName="name">
+          </div> 
+          <div class="form-group">
+            <label>Soyad</label>
+            <input type="text" placeholder="Soyadınız" formControlName="surname">
+          </div>
+          <div class="form-group">
+            <label>TC Kimlik No</label>
+            <input type="text" placeholder="" formControlName="identification_no">
+          </div>
+          <div class="form-group">
+            <label for="">Cinsiyet</label>
+            <select name="" id="">
+              <option value="male">Erkek</option>
+              <option value="female">Kadın</option>
+            </select>
+          </div>
+    </form>
+</div>

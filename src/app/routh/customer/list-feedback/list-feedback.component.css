@@ -1,0 +1,15 @@
+h2{
+    text-align: center;
+    margin-top: 25px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: max-content;
+    margin: 20px auto 0 auto;
+}
+.feedback-reply{
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,84 @@
+.accommodation-info{
+    border:1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom:1px solid #ccc ;
+    padding: 12px;
+}
+.hotel-details{
+    display: flex;
+    gap: 15px;
+}
+.hotel-image img{
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+.hotel-info{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.hotel-name{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+.hotel-rating{
+    font-size: 0.9em;
+    color: #777;
+    margin: 5px 0;
+}
+.hotel-rating span{
+    font-weight: bold;
+    color: #4caf50;
+}
+.stay-dates{
+    font-size: 0.9em;
+    color: #777;
+    margin: 5px 0;
+}
+.stay-dates span{
+    font-weight: bold;
+    color: #333;
+}
+.stay-info{
+    font-size: 0.9em;
+    color: #777;
+}
+.stay-info p{
+    display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 14px;
+  }
+.meal-info{
+    font-size: 0.9em;
+    color:#4caf50;
+    margin: 5px 0;
+}
+.cancellation-info{
+    font-size: 0.9em;
+    color: #f44336;
+    margin: 5px 0;
+}
+.hotel-address{
+    margin-top:10px;
+    font-size: 0.9em;
+    color: #555;
+}

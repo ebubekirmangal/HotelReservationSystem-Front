@@ -26,4 +26,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     background-image: url("/assets/background/3.jpg");
     
   }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(244, 209, 167); /* Scroll bar rengi */
+    border-radius: 5px; /* Scroll bar kenar yuvarlaması */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Scroll bar arka plan rengi */
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
 

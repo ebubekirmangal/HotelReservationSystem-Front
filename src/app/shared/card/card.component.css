@@ -1,0 +1,60 @@
+.card {
+    width: 400px; /* Kart genişliği artırıldı /
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image {
+    height: 300px; / Kartın resim alanının yüksekliği artırıldı /
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+  }
+  
+  .card-content {
+    padding: 20px; / İçerik alanının paddingi artırıldı /
+    text-align: center;
+  }
+  
+  .card-title {
+    margin: 10px 0;
+    font-size: 1.8em; / Başlık boyutu artırıldı */
+    color: #333;
+  }
+  
+  .card-description {
+    margin: 0 0 10px;
+    color: #666;
+  }
+  
+  .card-features {
+    margin: 10px 0;
+    color: #666;
+    text-align: left;
+  }
+  
+  .card-features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card-features li {
+    margin-bottom: 5px;
+  }
+  

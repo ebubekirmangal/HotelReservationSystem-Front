@@ -1,0 +1,34 @@
+<div class="mask"><div class="container">
+    <h2>Give {{type}}</h2>
+    <hr>
+    @if (type === "Feedback") {
+      <form [formGroup]="feedbackForm" (submit)="onSubmitForFeedback()">
+        <label for="title">Subject</label><br>
+        <input type="text" id="title" placeholder="write the subject here" formControlName="title"><br><br>
+        <label for="content">{{type}} Content</label><br>
+        <textarea name="content" id="content" formControlName="content"></textarea>
+        <div class="buttons">
+            <button type="submit" id="send">Send</button>
+            <button type="button" class="cancel" id="cancel" (click)="navigate()">Cancel</button>
+        </div>
+            <a routerLink="/list-feedback">
+                <small>Would you like to see other feedback?</small>
+            </a>
+    </form>  
+    }@else{
+        <form [formGroup]="replyForm" (submit)="onSubmitForReply()">
+            <label for="title">Subject</label><br>
+            <input type="text" id="title" placeholder="write the subject here" formControlName="title"><br><br>
+            <label for="content">{{type}} Content</label><br>
+            <textarea name="content" id="content" formControlName="content"></textarea>
+            <div class="buttons">
+                <button type="submit" id="send">Send</button>
+                <button type="button" class="cancel" id="cancel" (click)="navigate()">Cancel</button>
+            </div>
+        </form>  
+    } 
+    
+</div>
+<app-time-display  [isSubmit]="submit" [message]="message" [color]="color"></app-time-display>
+</div>
+

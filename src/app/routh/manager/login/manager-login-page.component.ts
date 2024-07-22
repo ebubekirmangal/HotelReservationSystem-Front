@@ -33,14 +33,14 @@ export class ManagerLoginPageComponent implements OnInit {
     this.registerForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      userEmail: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       passwordConfirm: ['', Validators.required],
       dateOfBirth: [null, Validators.required],
       role:["MANAGER"]
     });
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      userEmail: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
@@ -51,10 +51,10 @@ export class ManagerLoginPageComponent implements OnInit {
   toggleMove() {
     this.moveForm = !this.moveForm;
     this.submit = false;
-    console.log(this.moveForm)
+
   }
   createManager() {
-    console.log(this.registerForm.value)
+    const role:string = this.registerForm.value["role"];
     if(this.registerForm.value === null){
       this.submit = !this.submit;
         this.message = "Lütfen formu doldurunuz";
@@ -71,6 +71,10 @@ export class ManagerLoginPageComponent implements OnInit {
       this.submit = true;
       this.message = "Kayıt başarılı";
       this.color = "#07ec16";
+
+      this.userService.saveUserId(response.userId);
+      this.userService.saveEmail(this.registerForm.value["email"]);
+      this.userService.saveRole(role);
       
       setTimeout(() => {
           this.router.navigate(["/managerPage"]);
@@ -93,9 +97,13 @@ export class ManagerLoginPageComponent implements OnInit {
     
   }
   checkManager(){
-    
+    const role:string = this.loginForm.value["role"];
     this.userService.login(this.loginForm.value).subscribe(
-      (response) =>{
+  (response) =>{
+    this.userService.saveUserId(response.userId);
+    this.userService.saveEmail(this.registerForm.value["email"]);
+    this.userService.saveRole(role);
+
     this.submit = !this.submit;
     this.message = "Giriş başarılı";
     this.color = "#07ec16";

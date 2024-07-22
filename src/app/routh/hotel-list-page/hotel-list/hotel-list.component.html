@@ -1,0 +1,22 @@
+<app-basic-layout>
+    <div class="container">
+      <app-search-bar (search)="onSearch($event)"></app-search-bar>
+      <div class="hotel-list">
+        <app-card *ngFor="let hotel of filteredHotels"
+                  [imageSrc]="'assets/images/hotel-a1.jpg'"
+                  [imageAlt]="hotel.name"
+                  [title]="hotel.name"
+                  [description]="hotel.addressDescription + ' - ' + (hotel.star | star)"
+                  [features]="hotel.featureNames"
+                  (buttonClick)="selectRoom(hotel)">
+                  <app-button variant="primary" (clickButton)="selectRoom(hotel)">Oda Seç</app-button>
+        </app-card>
+      </div>
+      <div *ngIf="filteredHotels.length === 0" class="message">
+        <div class="not-found">Hiç otel bulunamadı.</div>
+      </div>
+      <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </div>
+    </div>
+  </app-basic-layout>
