@@ -10,6 +10,10 @@ import { FeedbackFormComponent } from './routh/customer/feedback-form/feedback-f
 import { FeedbackReplyComponent } from './routh/manager/feedback-reply/feedback-reply.component';
 import { HotelListComponent } from './routh/hotel-list-page/hotel-list/hotel-list.component';
 import { HotelDetailComponent } from './routh/hotel-list-page/hotel-detail/hotel-detail.component';
+import { PaymentPageComponent } from './routh/payment-page/payment-page.component';
+import { ProfilePageComponent } from './routh/profile-page/profile-page.component';
+import { MyAccountPageComponent } from './routh/customer/my-account/my-account.component';
+import { ReservationCardComponent } from './routh/customer/reservations/reservations.component';
 
 
 export const routes: Routes = [
@@ -51,7 +55,19 @@ export const routes: Routes = [
       {
         path:"hotel/:id",
         component: HotelDetailComponent
-      }
+      },
+      {
+        path:"payment-page",
+        component: PaymentPageComponent
+    },
+    {
+        path:"profile-page",
+        component: ProfilePageComponent,
+        children: [
+            { path: 'my-account', component: MyAccountPageComponent },
+            { path: 'reservations', component: ReservationCardComponent },
+        ] 
+    }
       
 
 ];

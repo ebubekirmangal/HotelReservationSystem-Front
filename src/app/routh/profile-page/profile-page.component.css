@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+  }
+
+  app-side-bar {
+    width: 90px; /* Yan menü genişliği /
+  }
+
+  nav:hover {
+    width: 280px; / Yan menü genişliği genişletildiğinde /
+  }
+
+  .content {
+    flex-grow: 1;
+    margin-left: 90px; / Yan menü genişliği /
+    padding: 20px;
+    transition: margin-left 0.2s linear;
+  }
+
+  nav:hover ~ .content {
+    margin-left: 280px; / Yan menü genişliği genişletildiğinde */
+  }

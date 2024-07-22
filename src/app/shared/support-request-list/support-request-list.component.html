@@ -1,0 +1,15 @@
+<h2>{{ 'Support Replies' | translate }}</h2>
+<ul>
+  @for (request of supportRequests; track $index) {
+  <div class="message">
+    <li>
+      <div id="email"><small>{{request.userEmail}}</small></div>
+      <div class="info">
+        <div id="subject">{{ request.subject | uppercase}}</div>
+      <div id="description">{{ request.description }}</div>
+      <!-- <p><strong>{{ 'STATUS' | translate }}:</strong> {{ request.status }}</p> -->
+      </div>
+    </li>
+  </div>
+  }
+</ul>

@@ -1,0 +1,18 @@
+<app-basic-layout>
+    <div id="sss">
+        <ul>
+            @for ( listItem of faqList; track $index) {
+            <li>
+                <div (click)="toggleAnswer($index)" class="question">
+                {{listItem.question}}
+            </div>
+        </li>
+        @if (listItem.showAnswer) {
+            <div class="answer">
+                {{listItem.answer}}
+            </div>
+        }
+    }
+        </ul>
+    </div>
+</app-basic-layout>
