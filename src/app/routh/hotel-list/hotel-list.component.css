@@ -1,0 +1,18 @@
+.hotel-list{
+    display: flex;
+}
+.filters{
+    width: 25%;
+    padding: 10px;
+}
+.hotels{
+    width: 75%;
+    padding: 10px;
+}
+.price-range{
+    margin-bottom: 20px
+}
+.popular-filters label{
+    display: block;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,21 @@
+.payment-page{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.left-panel{
+    display: block;
+    width: 60%;
+}
+.right-panel{
+    width: 35%;
+}
+@media(max-width:585px){
+    .payment-page{
+        flex-direction: column;
+    }
+    .left-panel,.right-panel{
+        width: 100%;
+    }
+}

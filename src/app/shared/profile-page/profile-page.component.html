@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="profile-update">
+        <h3>Kullanıcı Bilgilerim</h3>
+        <form action="http://localhost:8080/api/v1/auth" [formGroup]="profileForm" (submit)="onUpdateProfile()">
+            <label for="name">Ad</label>
+            <input type="text" name="firstName" placeholder="Bu alanı doldurmak zorunludur" formControlName="firstName">
+            <label for="name">Soyadı</label>
+            <input type="text" name="lastname" placeholder="Bu alanı doldurmak zorunludur" formControlName="lastName">
+            <label for="name">T.C Kimlik No</label>
+            <input type="text" name="identification" placeholder="" formControlName="tCIdentificationNo">
+            <label for="name">Cinsiyet</label>
+            <input type="text" name="" id="" >
+            <label for="name">Doğum Tarihi</label>
+            <input type="date" name="birthDate" placeholder="" formControlName="birthDate">
+            <label for="name">Cep Telefonu</label>
+            <input type="tel" name="phone" placeholder="" formControlName="phone">
+            <label for="name">E-Mail</label>
+            <input type="email" name="email" placeholder="" formControlName="email">
+            <button type="submit">Bilgilerimi Güncelle</button>
+        </form>
+    </div>
+ 
+    <div class="password-update">
+        <h3>Şifre Güncelleme</h3>
+        <form action="http://localhost:8080/api/v1/auth" [formGroup]="changePasswordForm" (submit)="onChangePassword()">
+        <label for="">Mevcut Şifre</label>
+        <input type="password" name="oldPassword" id="" formControlName="oldPassword">
+        <label for="">Yeni Şifre</label>
+        <input type="password" name="newPassword" id="" formControlName="newPassword">
+        <label for="">Yeni Şifre(Tekrar)</label>
+        <input type="password" name="confirmNewPassword" id="" formControlName="confirmNewPassword">
+        <button type="submit">Şifremi Güncelle</button>
+    </form>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+.container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    
+}
+
+.main-content{
+    width: 70%;
+   
+}
+
+
+/* side-bar */
+h1{
+    color:orange;
+    font-size: 1.4em;
+    margin: 1.3em 0 1em;
+    font-weight: 500;
+  }
+  .sidebar {
+      width: 200px;
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      height: max-content;
+    }
+    
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar ul li {
+      margin: 15px 0;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+    
+    .sidebar ul li:hover {
+      color: #e53935; /* Hover rengini kırmızı olarak ayarladım */
+    }
+    .sidebar a{
+        text-decoration: none;
+    }
+
+    

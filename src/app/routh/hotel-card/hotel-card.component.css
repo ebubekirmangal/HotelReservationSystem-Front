@@ -1,0 +1,40 @@
+.hotel-card{
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.hotel-card img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.hotel-info{
+    flex: 1;
+}
+.hotel-features span{
+    display: inline-block;
+    margin-right: 5px;
+}
+.hotel-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hotel-price button{
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background-color: #1f9b78;
+    font-weight: 500;
+    color: #fff;
+    font-size: .875em;
+    min-width: 7.5em;
+    padding: .625em;
+    padding-left: .9375em;
+    padding-right: .9375em;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}

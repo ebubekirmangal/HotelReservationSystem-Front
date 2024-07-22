@@ -1,0 +1,52 @@
+<div class="payment-container">
+    <div class="time-display">
+        <app-time-display [isSubmit]="submit" [message]="message" [color]="color"></app-time-display>  
+     </div>
+    <div class="payment-info" id="fixed-payment-details">
+        <h3 class="title">{{ "PAYMENT INFORMATION" | translate }}</h3>
+        <div class="image">
+            <img src="/assets/card/cards-visa-mastercard.png" alt="Visa and Mastercard logos">
+        </div>
+        <form action="http://localhost:8080/api/v1/payment" [formGroup]="cardForm" (submit)="createCreditCard()">
+            <div class="form-group">
+                <label>{{ "Card Holder Name" | translate }}</label>
+                <input type="text" id="cardHolderFullName" placeholder="John Venedik" formControlName="cardHolderName" (input)="onCardHolderNameInput($event)">
+                <div class="error">
+                    @if (cardForm.get('cardHolderName').hasError('pattern') && cardForm.get('cardHolderName').touched) 
+                    {
+                        Card holder name must contain only letters, Turkish characters, and spaces.
+                    }             
+                </div>
+            </div>
+            <div class="form-group">
+                <label>{{ "Card Number" | translate }}</label>
+                <input type="text" id="cardNumber" placeholder="•••• •••• •••• ••••" formControlName="cardNo" maxlength="16" (input)="onInput($event)">
+            </div>
+            <div class="form-group">
+                <label>{{ "Expiration Date" | translate }}</label>
+                <div class="expiration-date">
+                    <input type="text" placeholder="MM" formControlName="expireMonth" maxlength="2" (input)="onInput($event)">
+                    <span>/</span>
+                    <input type="text" placeholder="YY" formControlName="expireYear" maxlength="2" (input)="onInput($event)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>CVC2</label>
+                <button type="button">{{ "What is CVC2?" | translate }}</button>
+                <input type="text" placeholder="•••" formControlName="cvv" maxlength="3" (input)="onInput($event)">
+            </div>
+            <div class="paymentButton" id="card-payment-button">
+                <button type="submit" class="pay">
+                    <div class="paymentButton-text">
+                        <div class="price">{{ totalPrice }}</div>
+                        <div class="text">{{ "Make Secure Payments" | translate }}</div>
+                    </div>
+                </button>
+            </div>
+        </form>
+        <!-- Icon lock -->
+        <label for="c4">{{ "Transactions made through checkInFlex.com are protected by security certificates." | translate }}</label>
+        <p>{{ "* Fees at this property are priced in USD/EUR. The amount you pay at the property will be recalculated at the exchange rate of the day you pay, so it may differ from the current amount." | translate }}</p>
+    </div>
+</div>
+

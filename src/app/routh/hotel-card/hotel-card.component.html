@@ -1,0 +1,17 @@
+<div class="hotel-card">
+    <img [src]="hotel.imageUrl" alt="Hotel Image">
+    <div class="hotel-info">
+      <h3>{{ hotel.name }}</h3>
+      <p>{{ hotel.location }}</p>
+      <div class="hotel-features">
+        @for (feature of hotel.features; track $index) {
+            <span>{{ feature }}</span>
+        }
+      </div>
+      <div class="hotel-price">
+        <span>{{ hotel.price }} TL</span>
+        <button>Oda Seç</button>
+      </div>
+    </div>
+  </div>
+  

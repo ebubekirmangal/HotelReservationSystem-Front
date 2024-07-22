@@ -1,0 +1,26 @@
+<app-basic-layout>
+<div class="hotel-list">
+    <div class="filters">
+      <!-- Filtreler Buraya -->
+      <div class="price-range">
+        <p>Fiyat Aralığı</p>
+        <!-- Fiyat grafiği ve slider burada olacak -->
+      </div>
+      <div class="popular-filters">
+        <label>
+          <input type="checkbox">
+          Tesiste Ödeme İmkanı
+        </label>
+        <label>
+          <input type="checkbox">
+          8+ Puanlı Oteller
+        </label>
+      </div>
+    </div>
+    <div class="hotels">
+        @for (hotel of hotels; track $index) {
+            <app-hotel-card [hotel]="hotel"></app-hotel-card>
+        }
+    </div>
+  </div>
+</app-basic-layout>

@@ -1,0 +1,45 @@
+.container{
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+   
+}
+h3{
+    color: orange;
+}
+label{
+display: block;
+margin-bottom: 5px;
+}
+input{
+    width: max-content;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.profile-update{
+    border-right: 1px solid orange;
+
+}
+.password-update{
+ 
+    margin-left: 20px;
+}
+button{
+    width: max-content;
+    height: 40px;
+    border-radius: 8px;
+    border: #fff;
+    font-weight: 500;
+    color: white;
+    background-color: orange;
+    padding: .5em 1em;
+    cursor: pointer;
+    float:right;
+    margin : 5px;
+}
